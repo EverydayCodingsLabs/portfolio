@@ -19,8 +19,7 @@ export const config = {
 		email: "saksham@everydaycodings.com",
 		github: "https://github.com/everydaycodings",
 		twitter: "https://x.com/everydaycodings",
-		linkedin: "https://www.linkedin.com/in/everydaycodings/",
-		discord: "https://discord.gg/wydHwZNu8W",
-		topmate: "https://topmate.io/everydaycodings",
+		kaggle: "https://www.kaggle.com/everydaycodings",
+		linkedin: "https://www.linkedin.com/in/kumarsaksham1891",
 	},
 };

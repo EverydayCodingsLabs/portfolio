@@ -52,256 +52,111 @@ export const metadata: Metadata = {
 const resumeData = {
 	workExperience: [
 		{
-			company: "Ravix Studio",
-			logo: "https://cdn.everydaycodings.com/logos/ravix-dark.png",
-			location: "On-site",
-			website: config.companies.ravixStudio,
+			company: "Monk Capital",
+			logo: "/logos/monkcapital.png",
+			location: "India",
+			website: config.companies.monkCapital,
 			positions: [
 				{
-					role: "Co-founder & CTO",
-					period: "Nov 2025 - Present",
-					workType: "Full-time",
+					role: "Founder & Builder",
+					period: "Sep 2025 - Present",
+					workType: "Self-employed",
 					technologies: [
-						"NextJS",
+						"Python",
+						"Django",
+						"FastAPI",
+						"Next.js",
 						"TypeScript",
-						"NodeJS",
 						"PostgreSQL",
-						"AWS",
 						"Docker",
-						"Railway",
+						"Cloud Deployment",
 					],
-					responsibilities: ["Building alot of cool stuff"],
+					responsibilities: [
+						"Building an AI-powered wealth management platform focused on portfolio analytics and long-term investing",
+						"Designed backend architecture for handling financial data, user portfolios, and analytics",
+						"Implemented portfolio performance metrics, asset allocation tracking, and cash-flow analysis",
+						"Developing scalable APIs and data pipelines for financial and market data ingestion",
+						"Laying the groundwork for AI-driven insights such as risk profiling and intelligent portfolio analysis",
+					],
 				},
 			],
 		},
+
 		{
-			company: "Avenue Ticketing, Inc.",
-			logo: "https://cdn.everydaycodings.com/logos/avenue.jpeg",
+			company: "Independent Freelancer",
+			logo: "",
 			location: "Remote",
-			website: config.companies.avenueTicketing,
+			website: "https://www.fiverr.com",
 			positions: [
 				{
-					role: "Team Lead",
-					period: "Aug 2025 - Present",
-					workType: "Full-time",
+					role: "Freelance Backend & Data Engineer",
+					period: "2023 - Mar 2025",
+					workType: "Contract",
 					technologies: [
-						"NodeJS",
-						"TypeScript",
+						"Python",
+						"Django",
+						"FastAPI",
+						"REST APIs",
 						"PostgreSQL",
-						// "Redis",
-						"AWS",
-						"Stripe",
-						"Docker",
-						"Railway",
+						"Data Analysis",
+						"Automation",
 					],
 					responsibilities: [
-						"Developing complex end-to-end features including payment processing, event management, and user authentication systems",
-						"Building advanced TypeScript modules with complex business logic for ticket validation, pricing calculations",
-						"Implementing sophisticated error handling and data validation patterns across the entire application stack",
-						"Creating reusable components and utilities that handle complex state management and API integrations",
-						"Identifying and fixing edge cases in the codebase",
-						"Implementing monitoring and logging solutions for the application",
-					],
-				},
-				{
-					role: "Full Stack Developer",
-					period: "Apr 2025 - Aug 2025",
-					workType: "Part-time",
-					technologies: [
-						"NodeJS",
-						"TypeScript",
-						"PostgreSQL",
-						// "Redis",
-						"AWS",
-						"Stripe",
-					],
-					responsibilities: [
-						"Developing and maintaining a ticketing platform for event organizers and attendees.",
-						"Implementing secure authentication and authorization systems for organizers and users.",
-						"Optimizing server performance and implementing monitoring solutions for high-traffic events.",
-						"Re-writing legacy code to improve code quality and maintainability.",
-						"Creating and maintaining documentation for the codebase and processes.",
+						"Built backend services and APIs using Python for data-driven applications",
+						"Developed automation scripts and pipelines to process, clean, and analyze data",
+						"Implemented data analysis workflows to generate insights and reports for clients",
+						"Designed and optimized database schemas and queries for performance and reliability",
+						"Worked independently with clients to deliver production-ready backend solutions",
 					],
 				},
 			],
-		},
-		{
-			company: "Vibranium Soft",
-			logo: "https://cdn.everydaycodings.com/logos/vibraniumsoft.jpeg",
-			location: "Remote",
-			website: config.companies.vibraniumSoft,
-			positions: [
-				{
-					role: "Frontend Developer",
-					period: "December 2023 - July 2025",
-					workType: "Freelance",
-					technologies: [
-						"NextJS",
-						"Redux",
-						"TypeScript",
-						"Tailwind CSS",
-						"MUI",
-					],
-					responsibilities: [
-						"Developing and maintaining a B2B flight booking platform.",
-						"Collaborating with cross-functional teams to deliver optimized solutions for the travel industry.",
-						"Implementing features for flight search, booking management, and user onboarding.",
-						"Building a user-friendly interface to enhance customer experience.",
-						"Created responsive layouts for different screen sizes and devices.",
-						"Used pooling and caching strategies to improve performance and reduce load times.",
-						"Optimized SEO by implementing proper server side rendering",
-					],
-				},
-			],
-		},
-		{
-			company: "Keizer Works",
-			logo: "https://cdn.everydaycodings.com/logos/keizer.svg",
-			location: "Remote",
-			website: config.companies.keizerWorks,
-			positions: [
-				{
-					role: "SDE",
-					period: "November 2024 - April 2025",
-					workType: "Freelance",
-					technologies: [
-						"NextJS",
-						"TypeScript",
-						"Tailwind CSS",
-						"NodeJS",
-						"PostgreSQL",
-						"Shadcn",
-					],
-					responsibilities: [
-						"Actively maintaining and contributing to open-source projects that drive innovation and collaboration within the tech community.",
-						"Developing scalable and robust applications to meet client needs and deliver impactful solutions.",
-						"Assisting in managing projects from inception to delivery, ensuring timelines, quality standards, and client expectations are met.",
-						"Supporting the operational and strategic growth of the startup by streamlining workflows and contributing to decision-making processes.",
-						"Worked with external clients of the startup and worked on internal products too",
-					],
-				},
-			],
-		},
-		{
-			company: "Tap Invest",
-			logo: "https://cdn.everydaycodings.com/logos/tapico.png",
-			location: "Remote",
-			website: config.companies.tapInvest,
-			positions: [
-				{
-					role: "Frontend Developer",
-					period: "Apr 2024 - Nov 2024",
-					workType: "Part-time",
-					technologies: [
-						"NextJS",
-						"React",
-						"TypeScript",
-						"MUI",
-						"Tailwind CSS",
-					],
-					responsibilities: [
-						"Developed internal dashboard tools for the startup using React and NextJS, improving operational efficiency",
-						"Translate design concepts into dynamic and responsive web applications.",
-						"Optimize performance and ensure accessibility to deliver user-centric solutions.",
-						"Created complex reusable components to speed up development and reduce maintenance costs.",
-					],
-				},
-			],
-		},
-		{
-			company: "Shri Property",
-			logo: "https://cdn.everydaycodings.com/logos/shriProperty.png",
-			location: "Remote",
-			website: config.companies.shriProperty,
-			positions: [
-				{
-					role: "Full-Stack Developer",
-					period: "Dec 2021 - May 2023",
-					workType: "Freelance",
-					technologies: [
-						"React",
-						"Node.js",
-						"MongoDB",
-						"Express.js",
-						"TypeScript",
-					],
-					responsibilities: [
-						"Developed a real estate platform that simplified the process of finding and listing properties.",
-						"Led the complete development of the website, from UI/UX design to backend integrations.",
-						"Created a fully-featured admin dashboard for operations and management.",
-						"Each property is listed after going throw a proper verification process by operations team.",
-					],
-				},
-			],
-		},
-		{
-			company: "A2INFINITE",
-			logo: "https://cdn.everydaycodings.com/logos/a2infinite.png",
-			location: "Remote",
-			website: "https://a2infinite.com",
-			positions: [
-				{
-					role: "Frontend Developer",
-					period: "Feb 2021 - May 2021",
-					workType: "Freelance",
-					technologies: ["HTML", "CSS", "JavaScript", "SCSS"],
-					responsibilities: [
-						"Developed and maintained a platform that offers downloadable and printable practice worksheets for students.",
-						"Collaborated with the design and backend teams to ensure smooth platform functionality and user experience.",
-					],
-				},
-			],
-		},
+		}
+
 	],
+
 	education: [
 		{
-			institution: "Chandigarh Group of Colleges, Landran, Punjab",
-			logo: "https://cdn.everydaycodings.com/logos/cgc-landran.png",
-			degree:
-				"Bachelor of Technology (B.Tech), Computer Science and Engineering",
-			period: "2025 - 2028",
-			location: "Mohali, India",
-		},
-		{
-			institution:
-				"Chandigarh College of Engineering & Technology (Diploma Wing)",
-			logo: "https://cdn.everydaycodings.com/logos/ccet.png",
-			degree: "Diploma, Computer Science and Engineering",
-			period: "2022 - 2025",
-			location: "Chandigarh, India",
-		},
-		{
-			institution: "Govt Model School Sector 35D Chandigarh India",
+			institution: "Sahibganj College",
 			logo: "",
-			degree: "10th, School",
-			period: "2021 - 2022",
-			location: "Chandigarh, India",
+			degree: "Bachelor of Computer Application (BCA)",
+			period: "2022 - Present",
+			location: "Sahibganj, Jharkhand, India",
+		},
+		{
+			institution: "Goethals Public School",
+			logo: "",
+			degree: "Secondary School (CBSE Board)",
+			period: "2019 - 2021",
+			location: "Sahibganj, Jharkhand, India",
+		},
+		{
+			institution: "St. Xavier’s School",
+			logo: "",
+			degree: "Primary & Middle School Education",
+			period: "2009 - 2018",
+			location: "Sahibganj, Jharkhand, India",
 		},
 	],
+
+
 	volunteering: [
 		{
-			organization: "Hack With India-Chapter CEC-CGC",
-			logo: "https://cdn.everydaycodings.com/logos/hwi.jpeg",
-			role: "Technical Lead",
-			period: "Aug 2025 - Present",
-			location: "Chandigarh, India",
+			organization: "Open Source Community",
+			logo: "",
+			role: "Open Source Contributor",
+			period: "2023 - Present",
+			location: "Remote",
 			responsibilities: [
-				"I am responsible to manage all the technical aspects of the club and help the students to learn and grow in the field of technology.",
-			],
-		},
-		{
-			organization: "Innovation Club, CCET",
-			logo: "https://cdn.everydaycodings.com/logos/innovationclub.png",
-			role: "Team Lead",
-			period: "Oct 2023 - Nov 2024",
-			location: "Chandigarh, India",
-			responsibilities: [
-				"Leading a team to innovate and implement technology projects in the institution.",
-				"Organizing hackathons and coding competitions, encouraging student participation and skills development.",
+				"Contributed to open-source projects related to Python, backend systems, and AI",
+				"Developed and maintained features through code contributions and pull requests",
+				"Improved code quality, performance, and documentation in collaborative environments",
+				"Engaged with maintainers and contributors to review issues and propose improvements",
 			],
 		},
 	],
+
 };
+
 
 export default function WorkPage() {
 	return (

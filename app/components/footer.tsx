@@ -1,10 +1,10 @@
 import {
-	DiscordLogo,
 	EnvelopeSimple,
 	GithubLogo,
 	LinkedinLogo,
 	RssSimple,
 	XLogo,
+	HardDrive
 } from "@phosphor-icons/react/dist/ssr";
 import type { FC } from "react";
 import { config } from "../config/config";
@@ -21,6 +21,11 @@ const socialLinks = [
 		logo: GithubLogo,
 	},
 	{
+		name: "Kaggle",
+		url: config.socials.kaggle,
+		logo: HardDrive,
+	},
+	{
 		name: "X",
 		url: config.socials.twitter,
 		logo: XLogo,
@@ -29,17 +34,7 @@ const socialLinks = [
 		name: "LinkedIn",
 		url: config.socials.linkedin,
 		logo: LinkedinLogo,
-	},
-	{
-		name: "Discord",
-		url: config.socials.discord,
-		logo: DiscordLogo,
-	},
-	{
-		name: "RSS Feed",
-		url: "/rss",
-		logo: RssSimple,
-	},
+	}
 ];
 
 const Footer: FC = () => {

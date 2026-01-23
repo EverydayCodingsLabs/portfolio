@@ -26,10 +26,10 @@ const WorkExperienceItem: FC<WorkExperienceItemProps> = ({ job }) => {
 			<h3 className="font-medium text-xl mb-1 tracking-tighter flex items-center">
 				<Image
 					src={job.logo}
-					alt={job.company}
-					width={20}
-					height={20}
-					className="mr-4"
+					alt={""}
+					width={28}
+					height={28}
+					className="mr-4 border border-neutral-200 dark:border-neutral-800 rounded"
 				/>
 				<a
 					target="_blank"
