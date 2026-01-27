@@ -92,7 +92,7 @@ export default function CommunityPage() {
 
 				<div className="not-prose mt-4">
 					<a
-						href={config.socials.discord}
+						href="#"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#5865F2] hover:bg-[#4752C4] text-white font-medium rounded-lg transition-colors"
