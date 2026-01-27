@@ -47,10 +47,10 @@ export async function generateMetadata({
 			title,
 			description,
 			images: [ogImage],
-			creator: "@aayushchugh",
-			creatorId: "@aayushchugh",
-			site: "@aayushchugh",
-			siteId: "@aayushchugh",
+			creator: "@everydaycodings",
+			creatorId: "@everydaycodings",
+			site: "@everydaycodings",
+			siteId: "@everydaycodings",
 		},
 	};
 }

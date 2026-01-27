@@ -33,10 +33,10 @@ export const metadata: Metadata = {
 		description:
 			"Join the Ravix Studio community and connect with Kumar Saksham.",
 		images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
-		creator: "@aayushchugh",
-		creatorId: "@aayushchugh",
-		site: "@aayushchugh",
-		siteId: "@aayushchugh",
+		creator: "@everydaycodings",
+		creatorId: "@everydaycodings",
+		site: "@everydaycodings",
+		siteId: "@everydaycodings",
 	},
 };
 

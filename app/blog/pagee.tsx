@@ -45,10 +45,10 @@ export const metadata: Metadata = {
 		description:
 			"Read blog posts on engineering, design, and product development.",
 		images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
-		creator: "@aayushchugh",
-		creatorId: "@aayushchugh",
-		site: "@aayushchugh",
-		siteId: "@aayushchugh",
+		creator: "@everydaycodings",
+		creatorId: "@everydaycodings",
+		site: "@everydaycodings",
+		siteId: "@everydaycodings",
 	},
 };
 

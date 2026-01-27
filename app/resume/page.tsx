@@ -42,10 +42,10 @@ export const metadata: Metadata = {
 		description:
 			"Check out Kumar Saksham’s Full-Stack Developer resume, showcasing professional contributions and achievements.",
 		images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
-		creator: "@aayushchugh",
-		creatorId: "@aayushchugh",
-		site: "@aayushchugh",
-		siteId: "@aayushchugh",
+		creator: "@everydaycodings",
+		creatorId: "@everydaycodings",
+		site: "@everydaycodings",
+		siteId: "@everydaycodings",
 	},
 };
 

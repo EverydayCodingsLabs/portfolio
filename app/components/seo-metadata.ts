@@ -52,8 +52,8 @@ export function generateSEOMetadata({
 			title: fullTitle,
 			description,
 			images: [ogImage],
-			creator: "@aayushchugh",
-			site: "@aayushchugh",
+			creator: "@everydaycodings",
+			site: "@everydaycodings",
 		},
 		robots: {
 			index: true,

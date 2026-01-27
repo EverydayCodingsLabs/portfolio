@@ -34,10 +34,10 @@ export const metadata: Metadata = {
 		title: "Contact Kumar Saksham",
 		description: "Connect with Kumar Saksham via email or schedule a meet.",
 		images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
-		creator: "@aayushchugh",
-		creatorId: "@aayushchugh",
-		site: "@aayushchugh",
-		siteId: "@aayushchugh",
+		creator: "@everydaycodings",
+		creatorId: "@everydaycodings",
+		site: "@everydaycodings",
+		siteId: "@everydaycodings",
 	},
 };
 
