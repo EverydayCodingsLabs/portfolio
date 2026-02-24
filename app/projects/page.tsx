@@ -52,20 +52,20 @@ const projectsData = [
 		project: "MonkCapital",
 		logo: "/logos/monkcapital.png",
 		description:
-			"MonkCapital is a B2B platform for travel agencies to manage bookings and payments. I have built the end to end frontend for the platform.",
+			"MonkCapital is a comprehensive wealth management platform that enables users to manage investments, SIPs, loan ledgers, and track portfolio performance while gaining insights into broader market and microeconomic trends.",
 		points: [
-			"Building an AI-powered wealth management platform focused on long-term investing and portfolio analysis",
-			"Designed scalable backend architecture for handling financial data, user portfolios, and analytics",
-			"Implemented portfolio performance metrics, asset allocation tracking, and cash flow analysis",
-			"Built secure APIs for managing user accounts, holdings, and transactions",
-			"Developing data pipelines to ingest and normalize market and financial data",
-			"Laying the foundation for AI-driven insights such as risk profiling and portfolio intelligence",
+			"Building an AI-powered wealth management system focused on long-term investing and financial intelligence",
+			"Designed scalable backend architecture to handle financial data, portfolios, SIPs, and loan tracking",
+			"Implemented portfolio performance metrics such as CAGR, XIRR, asset allocation, and detailed cash flow analysis",
+			"Developed ledger systems for tracking SIP contributions and loan obligations",
+			"Built secure APIs for managing users, holdings, transactions, and financial records",
+			"Created data pipelines to ingest and normalize market and economic data",
+			"Laying the foundation for AI-driven insights including risk profiling, portfolio diagnostics, and macro/microeconomic analysis"
 		],
-
-		technologies: ["Python", "Django", "TypeScript", "NextJS", "Postgres"],
+		technologies: ["Python", "Django", "TypeScript", "NextJS", "PostgreSQL"],
 		website: "https://www.monkcapital.xyz",
 		category: "Full Stack",
-		workType: "Personal",
+		workType: "Personal"
 	},
 	{
 		project: "MimicMania",
