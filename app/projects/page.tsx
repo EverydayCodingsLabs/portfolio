@@ -68,6 +68,36 @@ const projectsData = [
 		workType: "Personal"
 	},
 	{
+		project: "LokKatha",
+		description:
+			"LokKatha is a digital archive of Indian folklore, documenting spirits, guardians, deities, and regional mythological entities from primary sources across the Indian subcontinent.",
+		points: [
+			"Built a searchable folklore archive with classification by entity type, threat level, region, and language",
+			"Designed structured entity pages for mythology, sightings, rituals, regional context, and historical references",
+			"Added archive discovery tools including guided browsing, random entries, long-form guides, and newsletter updates",
+			"Created a content model for scaling folklore records while preserving cultural and regional metadata",
+		],
+		technologies: ["NextJS", "TypeScript", "Tailwind CSS"],
+		website: "https://lokkatha.xyz",
+		category: "Full Stack",
+		workType: "Personal",
+	},
+	{
+		project: "Nimbus",
+		description:
+			"Nimbus is an open-source, self-hosted file manager focused on privacy, speed, and zero-knowledge encrypted storage.",
+		points: [
+			"Built a minimalist file management experience with folders, recent files, starred items, sharing, activity, and trash workflows",
+			"Implemented client-side encryption concepts for password-protected vaults and private file access",
+			"Designed offline-first storage flows using browser-side vaults for sensitive local files",
+			"Added organization and sharing features including tags, favorites, version history, protected links, and expiring access",
+		],
+		technologies: ["NextJS", "TypeScript", "Encryption", "File Storage"],
+		website: "https://nimbus.everydaycodings.com",
+		category: "Full Stack",
+		workType: "Open Source",
+	},
+	{
 		project: "MimicMania",
 		description:
 			"MimicMania is a web application that allows you to generate speech and clone voices using text-to-speech technology. With MimicMania, you can create custom voices in a variety of languages and use them for a range of applications, from voiceovers to chatbots. ",

@@ -1,5 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Navbar } from "./components/nav";
@@ -8,15 +9,32 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { PreloadResources } from "./preload";
 import Cmdk from "./components/CmdK";
 import Footer from "./components/footer";
+import WebMCP from "./components/WebMCP";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://everydaycodings.com"),
+	applicationName: "Kumar Saksham Portfolio",
 	title: {
 		default: "Kumar Saksham",
 		template: "%s | Kumar Saksham",
 	},
 	description:
 		"Passionate Backend Developer from India. On the way to master programming",
+	keywords: [
+		"Kumar Saksham",
+		"Backend Developer",
+		"Full Stack Developer",
+		"AI Engineer",
+		"Next.js Developer",
+		"TypeScript Developer",
+		"India Developer",
+	],
+	authors: [{ name: "Kumar Saksham", url: "https://everydaycodings.com" }],
+	creator: "Kumar Saksham",
+	publisher: "Kumar Saksham",
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
 		title: "Kumar Saksham",
 		description:
@@ -123,7 +141,7 @@ const cx = (...classes) => classes.filter(Boolean).join(" ");
 export default function RootLayout({
 	children,
 }: {
-	children: React.ReactNode;
+	children: ReactNode;
 }) {
 	return (
 		<html
@@ -143,6 +161,7 @@ export default function RootLayout({
 			<body className="antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-auto px-4 mt-8">
 				<main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
 					<Cmdk />
+					<WebMCP />
 					<Navbar />
 					{children}
 					<Footer />

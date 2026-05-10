@@ -3,11 +3,11 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
 	return {
 		name: "Kumar Saksham",
-		short_name: "ayushchugh",
+		short_name: "Kumar Saksham",
 		description:
 			"Passionate full stack developer from India. On the way to master programming",
 		start_url: "/",
-		id: "com.ayushchugh",
+		id: "com.everydaycodings.portfolio",
 		display: "standalone",
 		background_color: "#ffffff",
 		theme_color: "#000000",
