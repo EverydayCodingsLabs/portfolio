@@ -47,7 +47,19 @@ export const metadata: Metadata = {
 	},
 };
 
-const projectsData = [
+type Project = {
+	project: string;
+	logo?: string;
+	description: string;
+	points: string[];
+	technologies: string[];
+	website: string;
+	sourceCode?: string;
+	category: string;
+	workType: string;
+};
+
+const projectsData: Project[] = [
 	{
 		project: "MonkCapital",
 		logo: "/logos/monkcapital.png",
@@ -69,6 +81,7 @@ const projectsData = [
 	},
 	{
 		project: "LokKatha",
+		logo: "/logos/lokkatha.png",
 		description:
 			"LokKatha is a digital archive of Indian folklore, documenting spirits, guardians, deities, and regional mythological entities from primary sources across the Indian subcontinent.",
 		points: [
@@ -77,23 +90,26 @@ const projectsData = [
 			"Added archive discovery tools including guided browsing, random entries, long-form guides, and newsletter updates",
 			"Created a content model for scaling folklore records while preserving cultural and regional metadata",
 		],
-		technologies: ["NextJS", "TypeScript", "Tailwind CSS"],
+		technologies: ["NextJS", "TypeScript", "Supabase", "Shadcn/ui", "Docker", "Cloud Deployment"],
 		website: "https://lokkatha.xyz",
 		category: "Full Stack",
 		workType: "Personal",
 	},
 	{
 		project: "Nimbus",
+		logo: "/logos/nimbus.ico",
 		description:
 			"Nimbus is an open-source, self-hosted file manager focused on privacy, speed, and zero-knowledge encrypted storage.",
 		points: [
 			"Built a minimalist file management experience with folders, recent files, starred items, sharing, activity, and trash workflows",
 			"Implemented client-side encryption concepts for password-protected vaults and private file access",
+			"Used Supabase for application data and AWS S3 for file storage",
 			"Designed offline-first storage flows using browser-side vaults for sensitive local files",
 			"Added organization and sharing features including tags, favorites, version history, protected links, and expiring access",
 		],
-		technologies: ["NextJS", "TypeScript", "Encryption", "File Storage"],
+		technologies: ["NextJS", "TypeScript", "Supabase", "AWS S3", "Encryption"],
 		website: "https://nimbus.everydaycodings.com",
+		sourceCode: "https://github.com/everydaycodings/Nimbus",
 		category: "Full Stack",
 		workType: "Open Source",
 	},
@@ -201,6 +217,7 @@ export default function ProjectsPage() {
 						points={project.points}
 						technologies={project.technologies}
 						website={project.website}
+						sourceCode={project.sourceCode}
 						category={project.category}
 						workType={project.workType}
 					/>

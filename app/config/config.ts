@@ -14,6 +14,7 @@ export const config = {
 	],
 	companies: {
 		monkCapital: "https://monkcapital.xyz/",
+		lokKatha: "https://lokkatha.xyz",
 	},
 	socials: {
 		email: "saksham@everydaycodings.com",

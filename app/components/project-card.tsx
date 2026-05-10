@@ -11,6 +11,7 @@ interface ProjectCardProps {
 	points?: string[];
 	technologies: string[];
 	website: string;
+	sourceCode?: string;
 	category?: string;
 	workType?: string;
 }
@@ -22,13 +23,22 @@ const ProjectCard: FC<ProjectCardProps> = ({
 	points,
 	technologies,
 	website,
+	sourceCode,
 	category,
 	workType,
 }) => {
 	return (
 		<div className="mb-6">
 			<div className="flex items-center mb-2">
-				{logo ? (
+				{logo?.endsWith(".ico") ? (
+					<img
+						src={logo}
+						alt={title}
+						width={28}
+						height={28}
+						className="mr-4 border border-neutral-200 dark:border-neutral-800 rounded"
+					/>
+				) : logo ? (
 					<Image
 						src={logo}
 						alt={title}
@@ -55,6 +65,16 @@ const ProjectCard: FC<ProjectCardProps> = ({
 			<p className="text-neutral-600 dark:text-neutral-400 text-sm">
 				{description}
 			</p>
+			{sourceCode && (
+				<Link
+					href={sourceCode}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="text-sm"
+				>
+					Source code
+				</Link>
+			)}
 			{/* 🔹 Bullet points */}
 			<ul className="list-disc pl-5 text-neutral-600 dark:text-neutral-400 text-sm space-y-1">
 				{points?.map((point, idx) => (

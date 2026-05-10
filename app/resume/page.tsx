@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import WorkExperienceItem from "../components/work-experience-item";
 import EducationItem from "../components/education-item";
 import VolunteeringItem from "../components/volunteer-item";
+import WorkExperienceItem from "../components/work-experience-item";
 import { config } from "../config/config";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://everydaycodings.com"),
 	title: "Resume",
 	description:
-		"A summary of Kumar Saksham's corporate contributions, skills, and experience as a Full-Stack Developer, including work with Tap Invest, Shri Property, and A2INFINITE.",
+		"A summary of Kumar Saksham's work across AI-focused backend systems, financial data products, folklore archives, and freelance engineering.",
 	keywords: [
 		"Kumar Saksham Resume",
 		"Full Stack Developer Resume",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 		title: "Kumar Saksham’s Resume",
 		siteName: "Kumar Saksham's Portfolio",
 		description:
-			"Detailed resume of Kumar Saksham, Full-Stack Developer, with work experience, projects, and educational background.",
+			"Detailed resume of Kumar Saksham, AI-focused Backend Engineer, with work experience, projects, and educational background.",
 		images: [
 			{
 				url: `https://cdn.everydaycodings.com/open-graph/business-card.png`,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Kumar Saksham's Resume",
 		description:
-			"Check out Kumar Saksham’s Full-Stack Developer resume, showcasing professional contributions and achievements.",
+			"Check out Kumar Saksham’s resume, showcasing AI-focused backend, finance, folklore archive, and freelance engineering work.",
 		images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
 		creator: "@everydaycodings",
 		creatorId: "@everydaycodings",
@@ -77,6 +77,26 @@ const resumeData = {
 						"Implemented portfolio performance metrics, asset allocation tracking, and cash-flow analysis",
 						"Developing scalable APIs and data pipelines for financial and market data ingestion",
 						"Laying the groundwork for AI-driven insights such as risk profiling and intelligent portfolio analysis",
+					],
+				},
+			],
+		},
+		{
+			company: "LokKatha",
+			logo: "/logos/lokkatha.png",
+			location: "India",
+			website: config.companies.lokKatha,
+			positions: [
+				{
+					role: "Founder & Builder",
+					period: "2025 - Present",
+					workType: "Personal",
+					technologies: ["Next.js", "TypeScript", "Shadcn/ui", "Supabase", "Docker", "Cloud Deployment"],
+					responsibilities: [
+						"Built a searchable folklore archive with classification by entity type, threat level, region, and language",
+						"Designed structured entity pages for mythology, sightings, rituals, regional context, and historical references",
+						"Added archive discovery tools including guided browsing, random entries, long-form guides, and newsletter updates",
+						"Created a scalable content model for folklore records while preserving cultural and regional metadata",
 					],
 				},
 			],
