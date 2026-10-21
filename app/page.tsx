@@ -1,36 +1,45 @@
+import {
+  ArrowUpRight,
+  CaretDown,
+  EnvelopeSimple,
+  FileText,
+  GithubLogo,
+  HardDrive,
+  LinkedinLogo,
+  XLogo,
+} from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import type { ReactNode } from "react";
 import GitHubCalendar from "react-github-calendar";
-import ArrowIcon from "./components/ArrowIcon";
-import Badge from "./components/Badge";
-import ExperienceCounter from "./components/experience-counter";
-import Separator from "./components/separator";
+import Chip from "./components/chip";
+import Profile, { Roles } from "./components/profile";
 import { config } from "./config/config";
+import { resumeData } from "./config/resume";
+
+const description =
+  "AI-focused Backend Engineer from India, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://everydaycodings.com"),
   title: config.profile.name,
-  description:
-    "I'm a Full Stack Web Developer from India, trying to make the internet a bit cooler one website at a time.",
+  description,
   keywords: [
     config.profile.name,
+    "Backend Engineer",
+    "AI Engineer",
     "Full Stack Developer",
-    "Web Developer",
-    "React Developer",
     "Next.js Developer",
-    "TypeScript Developer",
-    "Node.js Developer",
-    "Software Engineer",
+    "Python Developer",
     "India Developer",
-    "Mohali Developer",
   ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: config.profile.name,
-    description:
-      "I'm a Full Stack Web Developer from India, trying to make the internet a bit cooler one website at a time.",
+    description,
     url: "https://everydaycodings.com",
     siteName: `${config.profile.name}'s Portfolio`,
     images: [
@@ -45,8 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: config.profile.name,
-    description:
-      "I'm a Full Stack Web Developer from India, trying to make the internet a bit cooler one website at a time.",
+    description,
     images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
     creator: "@everydaycoding",
     creatorId: "@everydaycoding",
@@ -55,18 +63,74 @@ export const metadata: Metadata = {
   },
 };
 
+const yearsSince = (date: string) =>
+  Math.floor((Date.now() - new Date(date).getTime()) / (365.25 * 864e5));
+
+const connect = [
+  { name: "GitHub", url: config.socials.github, icon: GithubLogo },
+  { name: "X", url: config.socials.twitter, icon: XLogo },
+  { name: "LinkedIn", url: config.socials.linkedin, icon: LinkedinLogo },
+  { name: "Kaggle", url: config.socials.kaggle, icon: HardDrive },
+  { name: "Mail", url: `mailto:${config.socials.email}`, icon: EnvelopeSimple },
+];
+
+function Section({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <section>
+      <div aria-hidden="true" className="hatch bleed" />
+      <h2 className="rule-b py-2 text-[1.75rem] font-light tracking-tight">
+        {title}
+      </h2>
+      <div className="py-6">{children}</div>
+    </section>
+  );
+}
+
+function Company({
+  href,
+  logo,
+  name,
+}: { href: string; logo: string; name: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex translate-y-[3px] items-center gap-1 rounded-md border border-[var(--line)] bg-neutral-50 px-1.5 py-0.5 align-baseline text-sm leading-4 text-neutral-900 transition-colors hover:border-neutral-300 dark:bg-neutral-900 dark:text-neutral-100 dark:hover:border-neutral-700"
+    >
+      <Image src={logo} alt="" width={14} height={14} aria-hidden="true" />
+      {name}
+    </a>
+  );
+}
+
+const monk = (
+  <Company
+    href={config.companies.monkCapital}
+    logo="/logos/monkcapital.png"
+    name="MonkCapital"
+  />
+);
+const lok = (
+  <Company
+    href={config.companies.lokKatha}
+    logo="/logos/lokkatha.png"
+    name="LokKatha"
+  />
+);
+
 export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: config.profile.name,
     url: "https://everydaycodings.com",
-    image: "https://cdn.everydaycodings.com/open-graph/business-card.png",
-    jobTitle: "Full Stack Web Developer",
+    image: "https://everydaycodings.com/avatar.webp",
+    jobTitle: "AI-focused Backend Engineer",
     worksFor: [
       {
         "@type": "Organization",
-        name: "Monk Capital",
+        name: "MonkCapital",
         url: config.companies.monkCapital,
       },
       {
@@ -81,237 +145,238 @@ export default function Page() {
       config.socials.linkedin,
     ],
     knowsAbout: [
-      "Full Stack Development",
-      "React",
+      "Backend Engineering",
+      "AI",
+      "Python",
       "Next.js",
       "TypeScript",
-      "Node.js",
-      "Web Development",
     ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Mohali",
+      addressLocality: "Sahibganj",
       addressCountry: "India",
     },
   };
 
   return (
-    <section>
+    <div className="-mt-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <header className="mb-6">
-        <div className="flex items-center gap-3 mb-2 flex-wrap">
-          <h1 className='font-medium text-2xl tracking-tight font-["monospace"]'>
-            Hello, I'm {config.profile.name} 👋
-          </h1>
-          {config.profile.availableForFreelance && (
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800 rounded-full">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              Available for opportunities
-            </span>
+
+      <div
+        aria-hidden="true"
+        className="rule-b -mx-5 px-5 py-5 sm:-mx-6 sm:px-6"
+      >
+        <div className="dots h-20 sm:h-24" />
+      </div>
+
+      <Profile name={config.profile.name}>
+        <h1 className="text-balance text-[1.7rem] leading-tight font-light tracking-tight sm:text-4xl">
+          {config.profile.name}
+        </h1>
+        <p className="mt-1 text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
+          <Roles items={config.profile.roles} />
+        </p>
+        {config.profile.availableForFreelance && (
+          <p className="mt-1.5 flex items-center gap-1.5 text-sm text-neutral-500 dark:text-neutral-400">
+            <span className="size-1.5 rounded-full bg-green-500" />
+            Available for opportunities
+          </p>
+        )}
+      </Profile>
+
+      <Section title="Products">
+        <div className="space-y-12">
+          {config.products.map((company) => (
+            <div key={company.name}>
+              <a
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2.5"
+              >
+                <Image
+                  src={company.logo}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="rounded-md border border-[var(--line)]"
+                />
+                <span className="text-xl font-medium tracking-tight group-hover:underline group-hover:underline-offset-4">
+                  {company.name}
+                </span>
+                <ArrowUpRight
+                  size={16}
+                  aria-hidden="true"
+                  className="text-neutral-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+              <p className="mt-2 max-w-[68ch] leading-relaxed text-neutral-600 dark:text-neutral-400">
+                {company.blurb}
+              </p>
+              <div
+                className="mt-5 grid gap-5 sm:grid-cols-2"
+              >
+                {company.apps.map((app) => (
+                  <a
+                    key={app.url}
+                    href={app.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    <span className="block overflow-hidden rounded-lg border border-[var(--line)] bg-neutral-100 shadow-[0_8px_24px_-12px_rgb(0_0_0/0.25)] dark:bg-neutral-900">
+                      <Image
+                        src={app.image}
+                        alt={`${app.name} screenshot`}
+                        width={960}
+                        height={600}
+                        sizes="(min-width: 640px) 360px, 100vw"
+                        className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                      />
+                    </span>
+                    <span className="mt-3 flex items-baseline justify-between gap-3">
+                      <span className="font-medium">{app.name}</span>
+                      <span className="font-mono text-xs text-neutral-400">
+                        {new URL(app.url).host}
+                      </span>
+                    </span>
+                    <span className="mt-0.5 block text-sm text-neutral-500 dark:text-neutral-400">
+                      {app.blurb}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <Link
+          href="/projects"
+          className="mt-8 inline-block text-sm text-neutral-500 underline-offset-4 hover:text-neutral-900 hover:underline dark:text-neutral-400 dark:hover:text-neutral-100"
+        >
+          Open-source projects →
+        </Link>
+      </Section>
+
+      <Section title="About">
+        <ul className="max-w-[68ch] list-disc space-y-3 pl-5 leading-relaxed text-neutral-700 marker:text-neutral-300 dark:text-neutral-300 dark:marker:text-neutral-600">
+          <li>
+            I'm a backend engineer from Sahibganj, India, who builds AI-powered
+            products end to end, from data pipelines and APIs to the interface
+            people actually use.{" "}
+            {yearsSince(config.profile.codingStartDate)}+ years of writing code,{" "}
+            {yearsSince(config.profile.professionalStartDate)}+ of shipping it
+            to production.
+          </li>
+          <li>
+            I founded {monk}, where I build the systems behind its wealth
+            dashboard and IPO tracker: portfolio analytics, financial data
+            pipelines and return metrics that turn messy money data into clear
+            answers.
+          </li>
+          <li>
+            I also run {lok}, a searchable archive of Indian folklore, and
+            designed the content model that keeps three millennia of regional
+            myth structured, sourced and easy to explore.
+          </li>
+          <li>
+            Before that, I spent two years freelancing, shipping backend
+            services, automation and data workflows for early-stage clients.
+          </li>
+          <li>
+            I move fast with AI, but every line still gets reviewed and every
+            system is designed on purpose. Code only matters when it solves a
+            real problem.
+          </li>
+        </ul>
+      </Section>
+
+      <Section title="Connect">
+        <ul className="flex flex-wrap gap-2">
+          {[...connect, { name: "Resume", url: "/resume", icon: FileText }].map(
+            ({ name, url, icon: Icon }) => (
+              <li key={name}>
+                <a
+                  href={url}
+                  {...(url.startsWith("http") && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
+                  className="inline-flex h-9 items-center gap-2 rounded-lg border border-[var(--line)] px-3 text-sm shadow-[0_1px_2px_rgb(0_0_0/0.04)] transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900"
+                >
+                  <Icon size={16} />
+                  {name}
+                </a>
+              </li>
+            ),
+          )}
+        </ul>
+      </Section>
+
+      <Section title="GitHub Activity">
+        <GitHubCalendar
+          username="everydaycodings"
+          fontSize={12}
+          blockSize={10}
+        />
+      </Section>
+
+      <Section title="Experience">
+        <div className="-my-3 divide-y divide-[var(--line)]">
+          {resumeData.workExperience.flatMap((job) =>
+            job.positions.map((position) => (
+              <details key={job.company + position.role} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-start gap-3 [&::-webkit-details-marker]:hidden">
+                  <span className="flex-1">
+                    <span className="block font-medium">{job.company}</span>
+                    <span className="block text-sm text-neutral-600 dark:text-neutral-400">
+                      {position.role} · {position.workType}
+                    </span>
+                  </span>
+                  <span className="pt-0.5 font-mono text-xs tabular-nums text-neutral-500">
+                    {position.period}
+                  </span>
+                  <CaretDown
+                    size={16}
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-neutral-400 transition-transform group-open:rotate-180"
+                  />
+                </summary>
+                <ul className="mt-3 max-w-[68ch] list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-neutral-700 marker:text-neutral-300 dark:text-neutral-300 dark:marker:text-neutral-600">
+                  {position.responsibilities.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {position.technologies.map((tech) => (
+                    <Chip key={tech} tech={tech} className="!text-xs" />
+                  ))}
+                </div>
+              </details>
+            )),
           )}
         </div>
-        <p className="text-lg prose prose-neutral dark:prose-invert">
-          I’m an AI-focused Backend Engineer from Sahibganj, India, with{" "}
-          <ExperienceCounter />. I build AI-backed products for finance,
-          cultural knowledge, and data-heavy workflows.
-        </p>
-      </header>
+      </Section>
 
-      <Separator />
-
-      <div className="mb-8 prose prose-neutral dark:prose-invert">
-        <h2>Professional Work</h2>
-
-        <p>
-          I work across{" "}
-          <strong>AI, backend systems, finance, and cultural knowledge</strong>.
-          I’m currently a <strong>BCA student</strong> and the{" "}
-          <strong>founder</strong> of{" "}
-          <span className="not-prose">
-            <Badge href={config.companies.monkCapital}>
-              <Image
-                src="/logos/monkcapital.png"
-                alt=""
-                height={18}
-                width={18}
-                className={"pr-1"}
-                aria-hidden="true"
-              />
-              Monk Capital
-            </Badge>
-          </span>{" "}
-          and{" "}
-          <span className="not-prose">
-            <Badge href={config.companies.lokKatha}>
-              <Image
-                src="/logos/lokkatha.png"
-                alt=""
-                height={18}
-                width={18}
-                className={"pr-1"}
-                aria-hidden="true"
-              />
-              LokKatha
-            </Badge>
-          </span>
-          .
-        </p>
-
-        <p>
-          At{" "}
-          <span className="not-prose">
-            <Badge href={config.companies.monkCapital}>
-              <Image
-                src="/logos/monkcapital.png"
-                alt=""
-                height={18}
-                width={18}
-                className={"pr-1"}
-                aria-hidden="true"
-              />
-              Monk Capital
-            </Badge>
-          </span>
-          , I’m designing and developing{" "}
-          <strong>
-            AI-powered backend systems, financial data pipelines, and analytics
-            engines
-          </strong>{" "}
-          that turn complex portfolio data into clear, actionable insights.
-        </p>
-        <p>
-          With{" "}
-          <span className="not-prose">
-            <Badge href={config.companies.lokKatha}>
-              <Image
-                src="/logos/lokkatha.png"
-                alt=""
-                height={18}
-                width={18}
-                className={"pr-1"}
-                aria-hidden="true"
-              />
-              LokKatha
-            </Badge>
-          </span>
-          , I’m building a searchable archive for regional folklore, mythical
-          entities, rituals, and cultural references.
-        </p>
-        <p>
-          Alongside building my startup, I’ve done{" "}
-          <strong>freelance backend and full-stack work</strong> on Fiverr,
-          shipping production-ready features, dashboards, and automation tools
-          for early-stage clients.
-        </p>
-      </div>
-
-      <Separator />
-
-      <div className="mb-8 prose prose-neutral dark:prose-invert">
-        <h2>What Makes Me Different</h2>
-        <p>
-          I'm not just another developer. I take full ownership of every project
-          I work on, which can be seen in my startup. I approach problems with
-          both a technical and business mindset—I understand that great code
-          means nothing if it doesn't solve real problems.
-        </p>
-        <p>
-          While I embrace AI-assisted development, I do it differently. I
-          leverage AI to build powerful systems faster, but always with proper
-          supervision, code review, and architectural oversight. This allows me
-          to maintain quality while maximizing productivity—the best of both
-          worlds.
-        </p>
-      </div>
-
-      <Separator />
-
-      {/* <div className="mb-8 prose prose-neutral dark:prose-invert">
-				<h2>Leadership & Community</h2>
-				<p>
-					As the Team Lead at the Innovation Club of{" "}
-					<a href="https://ccetdiploma.edu.in/" target="_blank">
-						CCET College
-					</a>
-					, I've learned how to lead a team and stay organized. I also assist in{" "}
-					<a href="https://chdtechnicaleducation.gov.in/" target="_blank">
-						ICT
-					</a>{" "}
-					training sessions, teaching government employees essential computer
-					skills. Additionally, I help organize the <i>Talent Hunt</i> cultural
-					program and serve as the student coordinator for <i>Jhalak</i>, our
-					college's digital newsletter.
-				</p>
-			</div>
-
-			<Separator /> */}
-
-      {/* <div className="mb-8 prose prose-neutral dark:prose-invert">
-				<h2>Personal Interests</h2>
-				<p>
-					Outside of work, I enjoy exploring Vedic astrology, playing the
-					guitar, and spending time with friends. I'm also pursuing a diploma in
-					Computer Science Engineering (CSE).
-				</p>
-			</div>
-
-			<Separator /> */}
-
-      <div className="mb-8 prose prose-neutral dark:prose-invert">
-        <h2>GitHub Contributions</h2>
-        <GitHubCalendar username="everydaycodings" />
-      </div>
-
-      <Separator />
-      {/*
-			<div className="mb-8 prose prose-neutral dark:prose-invert">
-				<h2>Writing</h2>
-				<p>
-					I've started writing <Link href="/blog">blogs</Link> to help others
-					improve their engineering skills. Stay tuned for more content!
-				</p>
-			</div>
-			*/}
-
-      <div className="prose prose-neutral dark:prose-invert">
-        <article className="text-xs sm:hidden lg:block">
-          Press ⌘+K to navigate with your keyboard.
-        </article>
-      </div>
-
-      <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
-        <li>
-          <a
-            className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-            rel="noopener noreferrer"
-            target="_blank"
-            href={config.socials.twitter}
-          >
-            <ArrowIcon />
-            <p className="h-7 ml-2">Follow me</p>
-          </a>
-        </li>
-      </ul>
-
-      <div>
-        <a
-          className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all text-neutral-600 dark:text-neutral-300 mt-3"
-          rel="noopener noreferrer"
-          target="_blank"
-          href={`mailto:${config.socials.email}?subject=Hello Saksham!`}
-        >
-          <p className="h-7">
-            <span className="mr-2 text-neutral-600">📧</span>
-            {config.socials.email}
-          </p>
-        </a>
-      </div>
-    </section>
+      <Section title="Education">
+        <ul className="-my-3 divide-y divide-[var(--line)]">
+          {resumeData.education.map((edu) => (
+            <li key={edu.institution} className="flex items-start gap-3 py-4">
+              <span className="flex-1">
+                <span className="block font-medium">{edu.institution}</span>
+                <span className="block text-sm text-neutral-600 dark:text-neutral-400">
+                  {edu.degree}
+                </span>
+              </span>
+              <span className="pt-0.5 font-mono text-xs tabular-nums text-neutral-500">
+                {edu.period}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+    </div>
   );
 }

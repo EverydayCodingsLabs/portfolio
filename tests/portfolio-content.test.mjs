@@ -6,7 +6,7 @@ test("LokKatha is represented consistently across config, homepage, and resume",
   const [configSource, homeSource, resumeSource] = await Promise.all([
     readFile("app/config/config.ts", "utf8"),
     readFile("app/page.tsx", "utf8"),
-    readFile("app/resume/page.tsx", "utf8"),
+    readFile("app/config/resume.ts", "utf8"),
   ]);
 
   assert.match(configSource, /lokKatha:\s*"https:\/\/lokkatha\.xyz"/);

@@ -2,162 +2,311 @@
 @tailwind components;
 @tailwind utilities;
 
-::selection {
-	background-color: #47a3f3;
-	color: #fefefe;
-}
-
 :root {
-	--sh-class: #2d5e9d;
-	--sh-identifier: #354150;
-	--sh-sign: #8996a3;
-	--sh-string: #007f7a;
-	--sh-keyword: #e02518;
-	--sh-comment: #a19595;
-	--sh-jsxliterals: #6266d1;
+  --bg: #ffffff;
+  --line: #e7e7e7;
+  --hatch: #e7e7e7;
+  --dot: #c9c9c9;
+  --scan: rgb(0 0 0 / 0.14);
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--sh-class: #4c97f8;
-		--sh-identifier: white;
-		--sh-keyword: #f47067;
-		--sh-string: #0fa295;
-	}
+  :root {
+    --bg: #111010;
+    --line: #262524;
+    --hatch: #262524;
+    --dot: #3a3938;
+    --scan: rgb(255 255 255 / 0.12);
+    color-scheme: dark;
+  }
+}
+
+::selection {
+  background-color: #47a3f3;
+  color: #fefefe;
 }
 
 html {
-	min-width: 360px;
+  min-width: 360px;
+  overflow-x: clip;
+  scrollbar-color: var(--line) transparent;
 }
 
-.prose .anchor {
-	@apply absolute invisible no-underline;
-
-	margin-left: -1em;
-	padding-right: 0.5em;
-	width: 80%;
-	max-width: 700px;
-	cursor: pointer;
+:focus-visible {
+  outline: 2px solid #47a3f3;
+  outline-offset: 2px;
 }
 
-j .prose a {
-	@apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+/* Frame: lines that run past the rails to the viewport edges.
+   Each works on an element horizontally centred in the page. */
+.bleed {
+  margin-inline: calc(50% - 50vw);
 }
 
-.prose .anchor:after {
-	@apply text-neutral-300 dark:text-neutral-700;
-	content: "#";
+.rule-b,
+.rule-t {
+  position: relative;
 }
 
-.prose *:hover > .anchor {
-	@apply visible;
+.rule-b::after,
+.rule-t::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  height: 1px;
+  background: var(--line);
 }
 
-.prose pre {
-	@apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
+.rule-b::after {
+  bottom: 0;
 }
 
-.prose code {
-	@apply px-1 py-0.5 rounded-lg;
+.rule-t::before {
+  top: 0;
 }
 
-.prose pre code {
-	@apply p-0;
-	border: initial;
-	line-height: 1.5;
+.hatch {
+  height: 1.5rem;
+  border-block: 1px solid var(--line);
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--hatch) 0 1px,
+    transparent 1px 7px
+  );
 }
 
-.prose code span {
-	@apply font-medium;
+.dots {
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 10px 10px;
 }
 
-.prose img {
-	/* Don't apply styles to next/image */
-	@apply m-0;
+/* Avatar glitch: plays once when the avatar is switched */
+.avatar-glitch {
+  isolation: isolate;
+}
+
+.avatar-glitch__scan,
+.avatar-glitch__rgb {
+  position: absolute;
+  inset: 0.25rem;
+  border-radius: 0.5rem;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.avatar-glitch__scan {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 2px,
+    var(--scan) 2px 4px
+  );
+}
+
+.avatar-glitch__rgb {
+  mix-blend-mode: screen;
+}
+
+.avatar-glitch[data-glitching="true"] {
+  animation: glitch-body 0.52s steps(8) both;
+}
+
+.avatar-glitch[data-glitching="true"] .avatar-glitch__img {
+  animation: glitch-slice 0.52s steps(8) both;
+}
+
+.avatar-glitch[data-glitching="true"] .avatar-glitch__scan {
+  animation: glitch-scan 0.52s steps(10) both;
+}
+
+.avatar-glitch[data-glitching="true"] .avatar-glitch__rgb {
+  animation: glitch-rgb 0.52s steps(6) both;
+}
+
+@keyframes glitch-body {
+  0%,
+  100% {
+    transform: none;
+    filter: none;
+  }
+  10% {
+    transform: translateX(-4px);
+  }
+  20% {
+    transform: translateX(4px);
+  }
+  30% {
+    transform: translateX(-2px);
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    transform: translateX(-6px);
+    filter: none;
+  }
+  60% {
+    transform: translateX(6px);
+  }
+  80% {
+    transform: translateX(2px);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes glitch-slice {
+  0%,
+  100% {
+    clip-path: inset(0);
+    transform: none;
+  }
+  15% {
+    clip-path: inset(10% 0 85%);
+    transform: translateX(-8px);
+  }
+  25% {
+    clip-path: inset(80% 0 10%);
+    transform: translateX(8px);
+  }
+  35% {
+    clip-path: inset(40% 0 45%);
+    transform: translateX(-12px);
+  }
+  45% {
+    clip-path: inset(55% 0 35%);
+    transform: translateX(12px);
+  }
+  55% {
+    clip-path: inset(20% 0 75%);
+    transform: translateX(-6px);
+  }
+  65% {
+    clip-path: inset(70% 0 20%);
+    transform: translateX(6px);
+  }
+  75% {
+    clip-path: inset(30% 0 65%);
+    transform: translateX(-4px);
+  }
+  85% {
+    clip-path: inset(60% 0 35%);
+    transform: translateX(4px);
+  }
+}
+
+@keyframes glitch-scan {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  85% {
+    opacity: 1;
+  }
+}
+
+@keyframes glitch-rgb {
+  0%,
+  100% {
+    opacity: 0;
+    transform: none;
+  }
+  15% {
+    opacity: 0.8;
+    background: rgb(255 37 113 / 0.3);
+    transform: translateX(8px);
+  }
+  35% {
+    opacity: 0.6;
+    background: rgb(38 227 255 / 0.3);
+    transform: translateX(-8px);
+  }
+  55% {
+    opacity: 0.7;
+    background: rgb(112 255 153 / 0.25);
+    transform: translateX(4px);
+  }
+  75% {
+    opacity: 0.5;
+    background: rgb(214 79 255 / 0.2);
+    transform: translateX(-4px);
+  }
+}
+
+.role-in {
+  animation: role-in 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes role-in {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(4px);
+  }
+}
+
+.avatar-dialog[open] {
+  animation: dialog-in 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-glitch[data-glitching="true"],
+  .avatar-glitch[data-glitching="true"] *,
+  .avatar-dialog[open],
+  .role-in {
+    animation: none !important;
+  }
 }
 
 .prose h2,
-h3,
-h4 {
-	@apply font-medium tracking-tighter !important;
+.prose h3,
+.prose h4 {
+  @apply font-medium tracking-tighter !important;
 }
 
 .prose strong {
-	@apply font-medium;
+  @apply font-medium;
 }
 
-.prose > :first-child {
-	/* Override removing top margin, causing layout shift */
-	margin-top: 1.25em !important;
-	margin-bottom: 1.25em !important;
-}
-
-pre::-webkit-scrollbar {
-	display: none;
-}
-
-pre {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-}
-
-/* Remove Safari input shadow on mobile */
-input[type="text"],
-input[type="email"] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-
-.prose .tweet a {
-	text-decoration: inherit;
-	font-weight: 500;
-}
-
-table {
-	display: block;
-	max-width: fit-content;
-	overflow-x: auto;
-	white-space: nowrap;
-}
-
-.prose .callout > p {
-	margin: 0 !important;
-}
-
-.title {
-	text-wrap: balance;
-}
-
-@media print {
-	body,
-	html {
-		width: 100%;
-		margin-top: 10px;
-		padding: 0;
-		background-color: #ffffff; /* Ensures a white background */
-	}
-
-	.no-print {
-		display: none; /* Hides elements with the 'no-print' class during printing */
-	}
-
-	/* Adjust the font size, visibility, or other properties for print */
-	h1,
-	h2,
-	h3 {
-		font-size: 12pt; /* Example: Change heading sizes */
-		color: #000000; /* Ensure black text for better print visibility */
-	}
-	.margin-10 {
-		margin-top: 30px;
-	}
-	.page-break {
-		page-break-before: always; /* Forces a page break before the element */
-	}
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply m-0;
 }
 
 /* Remove scrollbar from github contributions graph */
 .react-activity-calendar__scroll-container {
-	scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+@media print {
+  body,
+  html {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0;
+    background-color: #ffffff;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 12pt;
+    color: #000000;
+  }
+  .margin-10 {
+    margin-top: 30px;
+  }
+  .page-break {
+    page-break-before: always;
+  }
 }

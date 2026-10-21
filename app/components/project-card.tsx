@@ -1,94 +1,93 @@
 import type { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Separator from "./separator";
 import Chip from "./chip";
 
 interface ProjectCardProps {
-	title: string;
-	logo?: string;
-	description: string;
-	points?: string[];
-	technologies: string[];
-	website: string;
-	sourceCode?: string;
-	category?: string;
-	workType?: string;
+  title: string;
+  logo?: string;
+  description: string;
+  points?: string[];
+  technologies: string[];
+  website: string;
+  sourceCode?: string;
+  category?: string;
+  workType?: string;
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({
-	title,
-	logo,
-	description,
-	points,
-	technologies,
-	website,
-	sourceCode,
-	category,
-	workType,
+  title,
+  logo,
+  description,
+  points,
+  technologies,
+  website,
+  sourceCode,
+  category,
+  workType,
 }) => {
-	return (
-		<div className="mb-6">
-			<div className="flex items-center mb-2">
-				{logo?.endsWith(".ico") ? (
-					<img
-						src={logo}
-						alt={title}
-						width={28}
-						height={28}
-						className="mr-4 border border-neutral-200 dark:border-neutral-800 rounded"
-					/>
-				) : logo ? (
-					<Image
-						src={logo}
-						alt={title}
-						width={28}
-						height={28}
-						className="mr-4 border border-neutral-200 dark:border-neutral-800 rounded"
-					/>
-				) : (
-					<p className="mt-0 mb-0">{"->"}</p>
-				)}
-				<h3 className="font-medium text-xl tracking-tight mt-0 mb-0 ml-1">
-					<Link href={website} target="_blank" rel="noopener noreferrer">
-						{title}
-					</Link>
-				</h3>
-			</div>
-			{(category || workType) && (
-				<p className="text-neutral-600 dark:text-neutral-400 text-sm font-medium mb-2">
-					{category && workType
-						? `${category} | ${workType}`
-						: category || workType}
-				</p>
-			)}
-			<p className="text-neutral-600 dark:text-neutral-400 text-sm">
-				{description}
-			</p>
-			{sourceCode && (
-				<Link
-					href={sourceCode}
-					target="_blank"
-					rel="noopener noreferrer"
-					className="text-sm"
-				>
-					Source code
-				</Link>
-			)}
-			{/* 🔹 Bullet points */}
-			<ul className="list-disc pl-5 text-neutral-600 dark:text-neutral-400 text-sm space-y-1">
-				{points?.map((point, idx) => (
-					<li key={idx}>{point}</li>
-				))}
-			</ul>
-			<div className="flex flex-wrap gap-2 mt-2">
-				{technologies.map((tech, idx) => (
-					<Chip key={idx} tech={tech} />
-				))}
-			</div>
-			<Separator />
-		</div>
-	);
+  return (
+    <div className="mb-6">
+      <div className="flex items-center mb-2">
+        {logo?.endsWith(".ico") ? (
+          <img
+            src={logo}
+            alt={title}
+            width={28}
+            height={28}
+            className="mr-4 border border-neutral-200 dark:border-neutral-800 rounded"
+          />
+        ) : logo ? (
+          <Image
+            src={logo}
+            alt={title}
+            width={28}
+            height={28}
+            className="mr-4 border border-neutral-200 dark:border-neutral-800 rounded"
+          />
+        ) : (
+          <p className="mt-0 mb-0">{"->"}</p>
+        )}
+        <h3 className="font-medium text-xl tracking-tight mt-0 mb-0 ml-1">
+          <Link href={website} target="_blank" rel="noopener noreferrer">
+            {title}
+          </Link>
+        </h3>
+      </div>
+      {(category || workType) && (
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm font-medium mb-2">
+          {category && workType
+            ? `${category} | ${workType}`
+            : category || workType}
+        </p>
+      )}
+      <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+        {description}
+      </p>
+      {sourceCode && (
+        <Link
+          href={sourceCode}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm"
+        >
+          Source code
+        </Link>
+      )}
+      {/* 🔹 Bullet points */}
+      <ul className="list-disc pl-5 text-neutral-600 dark:text-neutral-400 text-sm space-y-1">
+        {points?.map((point, idx) => (
+          <li key={idx}>{point}</li>
+        ))}
+      </ul>
+      <div className="flex flex-wrap gap-2 mt-2">
+        {technologies.map((tech, idx) => (
+          <Chip key={idx} tech={tech} />
+        ))}
+      </div>
+      <hr className="my-6 border-[var(--line)]" />
+    </div>
+  );
 };
 
 export default ProjectCard;
