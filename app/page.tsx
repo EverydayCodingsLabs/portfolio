@@ -231,6 +231,16 @@ export default function Page() {
                   className="text-neutral-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 />
               </a>
+              {company.banner && (
+                <Image
+                  src={company.banner}
+                  alt=""
+                  width={1500}
+                  height={500}
+                  sizes="(min-width: 640px) 740px, 100vw"
+                  className="mt-4 aspect-[3/1] w-full rounded-lg border border-[var(--line)] object-cover"
+                />
+              )}
               <div
                 className="mt-4 grid gap-5 sm:grid-cols-2"
               >

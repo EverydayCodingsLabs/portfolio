@@ -6,7 +6,7 @@ import { type ReactNode, useEffect, useRef, useState } from "react";
 import { play } from "./sound";
 
 // The switch button cycles through these; one image hides it.
-const avatars = ["/avatar.webp", "/avatar-dots.webp"];
+const avatars = ["/avatar.webp", "/avatar-dots.webp", "/avatar-engraved.webp"];
 const GLITCH_MS = 520;
 
 export default function Profile({
