@@ -11,10 +11,10 @@ import {
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
 import GitHubCalendar from "react-github-calendar";
 import Chip from "./components/chip";
 import Profile, { Roles } from "./components/profile";
+import Section from "./components/section";
 import { config } from "./config/config";
 import { resumeData } from "./config/resume";
 
@@ -73,18 +73,6 @@ const connect = [
   { name: "Kaggle", url: config.socials.kaggle, icon: HardDrive },
   { name: "Mail", url: `mailto:${config.socials.email}`, icon: EnvelopeSimple },
 ];
-
-function Section({ title, children }: { title: string; children: ReactNode }) {
-  return (
-    <section>
-      <div aria-hidden="true" className="hatch bleed" />
-      <h2 className="rule-b py-2 text-[1.75rem] font-light tracking-tight">
-        {title}
-      </h2>
-      <div className="py-6">{children}</div>
-    </section>
-  );
-}
 
 function Company({
   href,

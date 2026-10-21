@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProjectCard from "../components/project-card";
+import Section from "../components/section";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://everydaycodings.com"),
@@ -104,7 +105,7 @@ const projectsData: Project[] = [
   },
   {
     project: "Nimbus",
-    logo: "/logos/nimbus.ico",
+    logo: "/logos/nimbus.png",
     description:
       "Nimbus is an open-source, self-hosted file manager focused on privacy, speed, and zero-knowledge encrypted storage.",
     points: [
@@ -121,9 +122,33 @@ const projectsData: Project[] = [
     workType: "Open Source",
   },
   {
+    project: "Glyph",
+    logo: "/logos/glyph.png",
+    description:
+      "Glyph is a privacy-first, end-to-end encrypted messenger. No phone number or email: your identity is a seed phrase that derives the keys encrypting everything you send, so the server only ever stores ciphertext.",
+    points: [
+      "Built seed-phrase identity: a BIP-39 mnemonic derives Ed25519 signing and X25519 key-exchange keys",
+      "Implemented sealed-envelope messages with per-message ephemeral X25519, HKDF, and XChaCha20-Poly1305, signed with Ed25519",
+      "Stored the identity encrypted at rest in IndexedDB behind a device PIN (scrypt), with an optional passphrase-protected backup",
+      "Designed a pluggable StorageProvider for encrypted media on Supabase Storage or any S3-compatible store",
+      "Shipped as an installable PWA with Docker setups for managed or fully self-hosted Supabase and MinIO",
+    ],
+    technologies: [
+      "NextJS",
+      "TypeScript",
+      "Supabase",
+      "AWS S3",
+      "Encryption",
+      "Docker",
+    ],
+    website: "https://github.com/EverydayCodingsLabs/glyph",
+    category: "Full Stack",
+    workType: "Open Source",
+  },
+  {
     project: "MimicMania",
     description:
-      "MimicMania is a web application that allows you to generate speech and clone voices using text-to-speech technology. With MimicMania, you can create custom voices in a variety of languages and use them for a range of applications, from voiceovers to chatbots. ",
+      "MimicMania is a web application that allows you to generate speech and clone voices using text-to-speech technology. With MimicMania, you can create custom voices in a variety of languages and use them for a range of applications, from voiceovers to chatbots.",
     points: [
       "Built a text-to-speech and voice cloning web application using deep learning models",
       "Implemented multi-language TTS support with customizable pitch, speed, and volume controls",
@@ -186,31 +211,46 @@ export default function ProjectsPage() {
     },
   };
 
+  const categories = Array.from(new Set(projectsData.map((p) => p.category)));
+
   return (
-    <section>
+    <div className="-mt-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="font-medium text-2xl mb-4 tracking-tight">Projects 🚀</h1>
 
-      {/* Projects Section */}
-      <div className="prose prose-neutral dark:prose-invert">
-        {projectsData.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.project}
-            logo={project.logo}
-            description={project.description}
-            points={project.points}
-            technologies={project.technologies}
-            website={project.website}
-            sourceCode={project.sourceCode}
-            category={project.category}
-            workType={project.workType}
-          />
-        ))}
-      </div>
-    </section>
+      <header className="rule-b py-10">
+        <h1 className="text-balance text-[1.7rem] leading-tight font-light tracking-tight sm:text-4xl">
+          Projects
+        </h1>
+        <p className="mt-2 max-w-[60ch] leading-relaxed text-neutral-600 dark:text-neutral-400">
+          Products I run, open-source tools I maintain, and the AI experiments
+          that got me here.
+        </p>
+      </header>
+
+      {categories.map((category) => (
+        <Section key={category} title={category}>
+          <div className="-my-6 divide-y divide-[var(--line)]">
+            {projectsData
+              .filter((p) => p.category === category)
+              .map((project) => (
+                <ProjectCard
+                  key={project.project}
+                  title={project.project}
+                  logo={project.logo}
+                  description={project.description}
+                  points={project.points}
+                  technologies={project.technologies}
+                  website={project.website}
+                  sourceCode={project.sourceCode}
+                  workType={project.workType}
+                />
+              ))}
+          </div>
+        </Section>
+      ))}
+    </div>
   );
 }
