@@ -140,6 +140,7 @@ const projectsData: Project[] = [
   },
   {
     project: "MimicMania",
+    logo: "/logos/mimicmania.png",
     description:
       "MimicMania is a web application that allows you to generate speech and clone voices using text-to-speech technology. With MimicMania, you can create custom voices in a variety of languages and use them for a range of applications, from voiceovers to chatbots.",
     points: [
@@ -156,6 +157,7 @@ const projectsData: Project[] = [
   },
   {
     project: "StableFusion",
+    logo: "/logos/stablefusion.png",
     description:
       "StableFusion is a web application that allows you to generate images using AI. With StableFusion, you can create custom images in a variety of styles and use them for a range of applications, from art to design.",
     points: [

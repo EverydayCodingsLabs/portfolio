@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Section from "./components/section";
 import { config } from "./config/config";
@@ -23,13 +24,26 @@ export default function NotFound() {
         >
           404
         </p>
-        <h1 className="text-balance text-[1.7rem] leading-tight font-light tracking-tight sm:text-4xl">
-          Page not found
-        </h1>
-        <p className="mt-2 max-w-[60ch] leading-relaxed text-neutral-600 dark:text-neutral-400">
-          This route doesn't exist. Maybe I never built it, or the link is
-          broken. Here's where you can go instead.
-        </p>
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+          <div className="flex-1">
+            <h1 className="text-balance text-[1.7rem] leading-tight font-light tracking-tight sm:text-4xl">
+              Page not found
+            </h1>
+            <p className="mt-2 max-w-[60ch] leading-relaxed text-neutral-600 dark:text-neutral-400">
+              This route doesn't exist. Maybe I never built it, or the link is
+              broken. Here's where you can go instead.
+            </p>
+          </div>
+          <Image
+            src="/not-found.webp"
+            alt="Illustration of me holding a map, lost at the edge of a path"
+            width={800}
+            height={603}
+            sizes="256px"
+            priority
+            className="w-56 shrink-0 rounded-xl border border-[var(--line)] sm:w-64"
+          />
+        </div>
       </header>
 
       <Section title="Try the products">

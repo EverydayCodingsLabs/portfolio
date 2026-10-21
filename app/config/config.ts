@@ -53,8 +53,8 @@ export const config = {
       apps: [
         {
           name: "Folklore Archive",
-          url: "https://lokkatha.xyz/mahoraga",
-          image: "/products/lokkatha-entity.webp",
+          url: "https://lokkatha.xyz/pishacha",
+          image: "/products/lokkatha-pishacha.webp",
           blurb: "Deep entries on every entity, from myth to sightings.",
         },
         {
