@@ -75,7 +75,7 @@ export default function ProjectCard({
             )}
           </div>
         </div>
-        <span className="hidden self-start pt-1.5 font-mono text-xs text-neutral-500 sm:inline">
+        <span className="hidden self-start pt-1.5 font-mono text-xs text-neutral-500 sm:inline dark:text-neutral-400">
           {new URL(website).host.replace(/^www\./, "")}
         </span>
       </div>

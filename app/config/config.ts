@@ -1,7 +1,6 @@
 export const config = {
   profile: {
     name: "Kumar Saksham",
-    jobTitle: "Full Stack Web Developer",
     codingStartDate: "2022-01-01", // When you started coding
     professionalStartDate: "2024-01-01", // When you started working on production apps
     availableForFreelance: true,

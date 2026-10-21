@@ -14,7 +14,7 @@ import { resumeData } from "../config/resume";
 export const metadata: Metadata = {
   metadataBase: new URL("https://everydaycodings.com"),
   title: "Contact",
-  description: "Get in touch with Kumar Saksham via email or schedule a meet.",
+  description: "Get in touch with Kumar Saksham by email.",
   alternates: {
     canonical: "/contact",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     images: ["/opengraph-image"],
     title: "Contact Kumar Saksham",
     description:
-      "Find and connect with Kumar Saksham via email or book a meeting.",
+      "Reach Kumar Saksham by email, LinkedIn, GitHub or X.",
     url: "https://everydaycodings.com/contact",
     siteName: "Kumar Saksham's Portfolio",
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Contact Kumar Saksham",
-    description: "Connect with Kumar Saksham via email or schedule a meet.",
+    description: "Get in touch with Kumar Saksham by email.",
     creator: "@everydaycodings",
     creatorId: "@everydaycodings",
     site: "@everydaycodings",
@@ -58,7 +58,7 @@ export default function ContactPage() {
           Contact
         </h1>
         <p className="mt-2 max-w-[60ch] leading-relaxed text-neutral-600 dark:text-neutral-400">
-          Feel free to reach out to me via email.
+          Email is the fastest way to reach me.
         </p>
       </header>
 
@@ -112,7 +112,7 @@ export default function ContactPage() {
                 <span className="flex-1 font-medium group-hover:underline group-hover:underline-offset-4">
                   {name}
                 </span>
-                <span className="truncate font-mono text-xs text-neutral-500">
+                <span className="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400">
                   @{handle(url)}
                 </span>
                 <ArrowUpRight

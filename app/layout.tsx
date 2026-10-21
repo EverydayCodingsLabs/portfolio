@@ -97,7 +97,11 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="antialiased text-black bg-white dark:text-white dark:bg-[#111010]">
+      {/* Extensions like Grammarly add attributes to <body> before hydration. */}
+      <body
+        className="antialiased text-black bg-white dark:text-white dark:bg-[#111010]"
+        suppressHydrationWarning
+      >
         <div className="mx-auto flex min-h-dvh max-w-3xl flex-col border-x border-[var(--line)]">
           <Cmdk />
           <Navbar />

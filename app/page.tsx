@@ -11,8 +11,8 @@ import {
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import GitHubCalendar from "react-github-calendar";
 import Chip from "./components/chip";
+import GitHubActivity from "./components/github-activity";
 import Profile, { Roles } from "./components/profile";
 import Section from "./components/section";
 import { config } from "./config/config";
@@ -254,7 +254,7 @@ export default function Page() {
                     </span>
                     <span className="mt-3 flex items-baseline justify-between gap-3">
                       <span className="font-medium">{app.name}</span>
-                      <span className="font-mono text-xs text-neutral-400">
+                      <span className="font-mono text-xs text-neutral-500 dark:text-neutral-400">
                         {new URL(app.url).host}
                       </span>
                     </span>
@@ -274,7 +274,7 @@ export default function Page() {
           href="/projects"
           className="mt-8 inline-block text-sm text-neutral-500 underline-offset-4 hover:text-neutral-900 hover:underline dark:text-neutral-400 dark:hover:text-neutral-100"
         >
-          Open-source projects →
+          All projects →
         </Link>
       </Section>
 
@@ -290,7 +290,7 @@ export default function Page() {
                       {position.role} · {position.workType}
                     </span>
                   </span>
-                  <span className="pt-0.5 font-mono text-xs tabular-nums text-neutral-500">
+                  <span className="pt-0.5 font-mono text-xs tabular-nums text-neutral-500 dark:text-neutral-400">
                     {position.period}
                   </span>
                   <CaretDown
@@ -325,7 +325,7 @@ export default function Page() {
                   {edu.degree}
                 </span>
               </span>
-              <span className="pt-0.5 font-mono text-xs tabular-nums text-neutral-500">
+              <span className="pt-0.5 font-mono text-xs tabular-nums text-neutral-500 dark:text-neutral-400">
                 {edu.period}
               </span>
             </li>
@@ -334,11 +334,7 @@ export default function Page() {
       </Section>
 
       <Section title="GitHub Activity">
-        <GitHubCalendar
-          username="everydaycodings"
-          fontSize={12}
-          blockSize={10}
-        />
+        <GitHubActivity username="everydaycodings" />
       </Section>
 
       <Section title="Connect">

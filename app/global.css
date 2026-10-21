@@ -26,9 +26,14 @@
 }
 
 html {
-  min-width: 360px;
+  min-width: 320px;
   overflow-x: clip;
   scrollbar-color: var(--line) transparent;
+}
+
+/* 100vw includes the scrollbar, so full-bleed lines overshoot by its width. */
+body {
+  overflow-x: clip;
 }
 
 :focus-visible {
@@ -307,12 +312,6 @@ html {
   h3 {
     font-size: 12pt;
     color: #000000;
-  }
-  .margin-10 {
-    margin-top: 30px;
-  }
-  .page-break {
-    page-break-before: always;
   }
 }
 

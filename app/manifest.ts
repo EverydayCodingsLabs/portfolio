@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Kumar Saksham",
     short_name: "Kumar Saksham",
     description:
-      "Passionate full stack developer from India. On the way to master programming",
+      "India-based Backend Engineer specializing in AI systems, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
     start_url: "/",
     id: "com.everydaycodings.portfolio",
     display: "standalone",

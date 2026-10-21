@@ -66,7 +66,7 @@ export default function Profile({
             onClick={toggle}
             aria-label="Switch avatar"
             title="Switch avatar"
-            className="-ml-1.5 inline-flex size-8 items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+            className="-ml-2 inline-flex size-9 items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
           >
             <CircleHalf size={16} weight="bold" />
           </button>

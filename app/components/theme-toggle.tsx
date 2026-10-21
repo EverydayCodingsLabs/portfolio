@@ -3,9 +3,8 @@ import { Moon, Sun } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { play } from "./sound";
 
-// Follows the OS by default. A click overrides it; picking the OS theme again
-// clears the override so it goes back to following the system.
-export function ThemeToggle() {
+// Tracks the `dark` class on <html>, whether it came from the OS or the toggle.
+export function useDark() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
@@ -16,6 +15,14 @@ export function ThemeToggle() {
     observer.observe(root, { attributeFilter: ["class"] });
     return () => observer.disconnect();
   }, []);
+
+  return dark;
+}
+
+// Follows the OS by default. A click overrides it; picking the OS theme again
+// clears the override so it goes back to following the system.
+export function ThemeToggle() {
+  const dark = useDark();
 
   function toggle(event: React.MouseEvent<HTMLButtonElement>) {
     const next = !dark;
@@ -73,7 +80,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
-      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[var(--line)] text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+      className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-[var(--line)] text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
     >
       <Icon size={15} weight="bold" />
     </button>

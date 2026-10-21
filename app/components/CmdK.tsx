@@ -9,19 +9,19 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { config } from "../config/config";
 
-const Example = () => {
+const iconMap: Record<string, any> = {
+  "/": "HomeIcon",
+  "/projects": "CodeBracketSquareIcon",
+  "/resume": "BriefcaseIcon",
+  "/contact": "PhoneIcon",
+};
+
+export default function Cmdk() {
   const [open, setOpen] = useState<boolean>(false);
   const [search, setSearch] = useState("");
   const router = useRouter();
 
   useHandleOpenCommandPalette(setOpen);
-
-  const iconMap: Record<string, any> = {
-    "/": "HomeIcon",
-    "/projects": "CodeBracketSquareIcon",
-    "/resume": "BriefcaseIcon",
-    "/contact": "PhoneIcon",
-  };
 
   const filteredItems = filterItems(
     [
@@ -46,7 +46,7 @@ const Example = () => {
       search={search}
       isOpen={open}
       page={"root"}
-      placeholder="Looking for something?"
+      placeholder="Go to a page"
     >
       <CommandPalette.Page id="root" onEscape={() => setOpen(false)}>
         {filteredItems.length ? (
@@ -63,15 +63,11 @@ const Example = () => {
             </CommandPalette.List>
           ))
         ) : (
-          <CommandPalette.FreeSearchAction />
+          <p className="px-3.5 py-4 text-sm text-neutral-500 dark:text-neutral-400">
+            No page matches “{search}”.
+          </p>
         )}
-      </CommandPalette.Page>
-
-      <CommandPalette.Page children id="projects">
-        {/* Projects page */}
       </CommandPalette.Page>
     </CommandPalette>
   );
-};
-
-export default Example;
+}

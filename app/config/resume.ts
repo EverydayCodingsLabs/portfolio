@@ -4,7 +4,7 @@ export const resumeData = {
   title: "Backend Engineer · AI & Data Products",
   location: "Sahibganj, Jharkhand, India",
   summary:
-    "I live where tech meets finance, building AI-powered products end to end that make everyday life, and money most of all, easy. Founder of MonkCapital, a wealth analytics and IPO tracking platform that makes understanding your finances a piece of cake. Self-taught, quick to pick up new technologies, and ready to go toe to toe with engineers around the world.",
+    "Backend engineer building AI-powered products end to end, from data pipelines and APIs to the interfaces on top. Founder of MonkCapital, a wealth analytics and IPO tracking platform with real return metrics like XIRR and CAGR, and builder of LokKatha, a sourced archive of Indian folklore. Self-taught and quick to pick up new technologies.",
   skills: [
     { group: "Languages", items: "Python, TypeScript, SQL" },
     { group: "Backend", items: "Django, FastAPI, REST APIs, data pipelines" },
@@ -84,7 +84,7 @@ export const resumeData = {
           technologies: [
             "Next.js",
             "TypeScript",
-            "Shadcn/ui",
+            "shadcn/ui",
             "Supabase",
             "Docker",
             "Cloud Deployment",
@@ -103,7 +103,6 @@ export const resumeData = {
       company: "Independent Freelancer",
       logo: "",
       location: "Remote",
-      website: "https://www.fiverr.com",
       positions: [
         {
           role: "Freelance Backend & Data Engineer",
@@ -159,22 +158,6 @@ export const resumeData = {
       degree: "Primary & Middle School Education",
       period: "2009 - 2018",
       location: "Sahibganj, Jharkhand, India",
-    },
-  ],
-
-  volunteering: [
-    {
-      organization: "Open Source Community",
-      logo: "",
-      role: "Open Source Contributor",
-      period: "2023 - Present",
-      location: "Remote",
-      responsibilities: [
-        "Contributed to open-source projects related to Python, backend systems, and AI",
-        "Developed and maintained features through code contributions and pull requests",
-        "Improved code quality, performance, and documentation in collaborative environments",
-        "Engaged with maintainers and contributors to review issues and propose improvements",
-      ],
     },
   ],
 };

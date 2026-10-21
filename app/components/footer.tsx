@@ -6,7 +6,7 @@ export default function Footer() {
       <p>
         © {new Date().getFullYear()} {config.profile.name}
       </p>
-      <p>Built with Next.js</p>
+      <p>Shipped from Sahibganj, one commit at a time</p>
     </footer>
   );
 }

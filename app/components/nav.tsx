@@ -34,7 +34,8 @@ export function Navbar() {
               key={path}
               href={path}
               aria-current={currentRoute === path ? "page" : undefined}
-              className="px-1.5 py-1 text-sm sm:px-2 text-neutral-500 transition-colors hover:text-neutral-900 aria-[current=page]:text-neutral-900  dark:text-neutral-400 dark:hover:text-neutral-100 dark:aria-[current=page]:text-neutral-100"
+              // The KS mark already goes home, so phones drop the Home link to fit.
+              className={`${path === "/" ? "hidden sm:inline-block" : "inline-block"} px-1.5 py-2.5 text-sm sm:px-2 text-neutral-500 transition-colors hover:text-neutral-900 aria-[current=page]:text-neutral-900  dark:text-neutral-400 dark:hover:text-neutral-100 dark:aria-[current=page]:text-neutral-100`}
             >
               {name}
             </Link>
@@ -44,7 +45,7 @@ export function Navbar() {
           type="button"
           onClick={openPalette}
           aria-label="Search pages"
-          className="ml-1 inline-flex h-8 items-center gap-2 rounded-full border border-[var(--line)] px-3 text-sm text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+          className="ml-1 inline-flex h-9 items-center gap-2 rounded-full border border-[var(--line)] px-3 text-sm text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
         >
           <MagnifyingGlass size={15} weight="bold" />
           <kbd className="hidden font-sans text-xs sm:inline">⌘K</kbd>

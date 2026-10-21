@@ -11,9 +11,9 @@ export const metadata: Metadata = {
     "A summary of Kumar Saksham's work across AI-focused backend systems, financial data products, folklore archives, and freelance engineering.",
   keywords: [
     "Kumar Saksham Resume",
-    "Full Stack Developer Resume",
-    "Web Developer CV",
-    "React Developer Resume",
+    "Backend Engineer Resume",
+    "AI Engineer Resume",
+    "Python Developer Resume",
     "Software Engineer Resume",
     "Work Experience",
   ],
