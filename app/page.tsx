@@ -42,24 +42,16 @@ export const metadata: Metadata = {
     description,
     url: "https://everydaycodings.com",
     siteName: `${config.profile.name}'s Portfolio`,
-    images: [
-      {
-        url: "https://cdn.everydaycodings.com/open-graph/business-card.png",
-        height: 630,
-        alt: config.profile.name,
-      },
-    ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: config.profile.name,
     description,
-    images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
-    creator: "@everydaycoding",
-    creatorId: "@everydaycoding",
-    site: "@everydaycoding",
-    siteId: "@everydaycoding",
+    creator: "@everydaycodings",
+    creatorId: "@everydaycodings",
+    site: "@everydaycodings",
+    siteId: "@everydaycodings",
   },
 };
 
@@ -112,6 +104,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: config.profile.name,
+    alternateName: "everydaycodings",
     url: "https://everydaycodings.com",
     image: "https://everydaycodings.com/avatar.webp",
     jobTitle: "AI-focused Backend Engineer",
@@ -131,6 +124,7 @@ export default function Page() {
       config.socials.github,
       config.socials.twitter,
       config.socials.linkedin,
+      config.socials.kaggle,
     ],
     knowsAbout: [
       "Backend Engineering",
@@ -157,7 +151,7 @@ export default function Page() {
         aria-hidden="true"
         className="rule-b -mx-5 px-5 py-5 sm:-mx-6 sm:px-6"
       >
-        <div className="dots h-20 sm:h-24" />
+        <div className="dots h-8 sm:h-24" />
       </div>
 
       <Profile name={config.profile.name}>
@@ -174,79 +168,6 @@ export default function Page() {
           </p>
         )}
       </Profile>
-
-      <Section title="Products">
-        <div className="space-y-12">
-          {config.products.map((company) => (
-            <div key={company.name}>
-              <a
-                href={company.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5"
-              >
-                <Image
-                  src={company.logo}
-                  alt=""
-                  width={28}
-                  height={28}
-                  className="rounded-md border border-[var(--line)]"
-                />
-                <span className="text-xl font-medium tracking-tight group-hover:underline group-hover:underline-offset-4">
-                  {company.name}
-                </span>
-                <ArrowUpRight
-                  size={16}
-                  aria-hidden="true"
-                  className="text-neutral-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
-              </a>
-              <p className="mt-2 max-w-[68ch] leading-relaxed text-neutral-600 dark:text-neutral-400">
-                {company.blurb}
-              </p>
-              <div
-                className="mt-5 grid gap-5 sm:grid-cols-2"
-              >
-                {company.apps.map((app) => (
-                  <a
-                    key={app.url}
-                    href={app.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block"
-                  >
-                    <span className="block overflow-hidden rounded-lg border border-[var(--line)] bg-neutral-100 shadow-[0_8px_24px_-12px_rgb(0_0_0/0.25)] dark:bg-neutral-900">
-                      <Image
-                        src={app.image}
-                        alt={`${app.name} screenshot`}
-                        width={960}
-                        height={600}
-                        sizes="(min-width: 640px) 360px, 100vw"
-                        className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                      />
-                    </span>
-                    <span className="mt-3 flex items-baseline justify-between gap-3">
-                      <span className="font-medium">{app.name}</span>
-                      <span className="font-mono text-xs text-neutral-400">
-                        {new URL(app.url).host}
-                      </span>
-                    </span>
-                    <span className="mt-0.5 block text-sm text-neutral-500 dark:text-neutral-400">
-                      {app.blurb}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        <Link
-          href="/projects"
-          className="mt-8 inline-block text-sm text-neutral-500 underline-offset-4 hover:text-neutral-900 hover:underline dark:text-neutral-400 dark:hover:text-neutral-100"
-        >
-          Open-source projects →
-        </Link>
-      </Section>
 
       <Section title="About">
         <ul className="max-w-[68ch] list-disc space-y-3 pl-5 leading-relaxed text-neutral-700 marker:text-neutral-300 dark:text-neutral-300 dark:marker:text-neutral-600">
@@ -281,34 +202,77 @@ export default function Page() {
         </ul>
       </Section>
 
-      <Section title="Connect">
-        <ul className="flex flex-wrap gap-2">
-          {[...connect, { name: "Resume", url: "/resume", icon: FileText }].map(
-            ({ name, url, icon: Icon }) => (
-              <li key={name}>
-                <a
-                  href={url}
-                  {...(url.startsWith("http") && {
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                  })}
-                  className="inline-flex h-9 items-center gap-2 rounded-lg border border-[var(--line)] px-3 text-sm shadow-[0_1px_2px_rgb(0_0_0/0.04)] transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900"
-                >
-                  <Icon size={16} />
-                  {name}
-                </a>
-              </li>
-            ),
-          )}
-        </ul>
-      </Section>
-
-      <Section title="GitHub Activity">
-        <GitHubCalendar
-          username="everydaycodings"
-          fontSize={12}
-          blockSize={10}
-        />
+      <Section title="Products">
+        <div className="space-y-12">
+          {config.products.map((company) => (
+            <div key={company.name}>
+              <a
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2.5"
+              >
+                <Image
+                  src={company.logo}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="rounded-md border border-[var(--line)]"
+                />
+                <span className="text-xl font-medium tracking-tight group-hover:underline group-hover:underline-offset-4">
+                  {company.name}
+                </span>
+                <ArrowUpRight
+                  size={16}
+                  aria-hidden="true"
+                  className="text-neutral-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+              <div
+                className="mt-4 grid gap-5 sm:grid-cols-2"
+              >
+                {company.apps.map((app) => (
+                  <a
+                    key={app.url}
+                    href={app.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    <span className="block overflow-hidden rounded-lg border border-[var(--line)] bg-neutral-100 shadow-[0_8px_24px_-12px_rgb(0_0_0/0.25)] dark:bg-neutral-900">
+                      <Image
+                        src={app.image}
+                        alt={`${app.name} screenshot`}
+                        width={960}
+                        height={600}
+                        sizes="(min-width: 640px) 360px, 100vw"
+                        className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                      />
+                    </span>
+                    <span className="mt-3 flex items-baseline justify-between gap-3">
+                      <span className="font-medium">{app.name}</span>
+                      <span className="font-mono text-xs text-neutral-400">
+                        {new URL(app.url).host}
+                      </span>
+                    </span>
+                    <span className="mt-0.5 block text-sm text-neutral-500 dark:text-neutral-400">
+                      {app.blurb}
+                    </span>
+                  </a>
+                ))}
+              </div>
+              <p className="mt-5 max-w-[68ch] leading-relaxed text-neutral-600 dark:text-neutral-400">
+                {company.blurb}
+              </p>
+            </div>
+          ))}
+        </div>
+        <Link
+          href="/projects"
+          className="mt-8 inline-block text-sm text-neutral-500 underline-offset-4 hover:text-neutral-900 hover:underline dark:text-neutral-400 dark:hover:text-neutral-100"
+        >
+          Open-source projects →
+        </Link>
       </Section>
 
       <Section title="Experience">
@@ -363,6 +327,36 @@ export default function Page() {
               </span>
             </li>
           ))}
+        </ul>
+      </Section>
+
+      <Section title="GitHub Activity">
+        <GitHubCalendar
+          username="everydaycodings"
+          fontSize={12}
+          blockSize={10}
+        />
+      </Section>
+
+      <Section title="Connect">
+        <ul className="flex flex-wrap gap-2">
+          {[...connect, { name: "Resume", url: "/resume", icon: FileText }].map(
+            ({ name, url, icon: Icon }) => (
+              <li key={name}>
+                <a
+                  href={url}
+                  {...(url.startsWith("http") && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
+                  className="inline-flex h-9 items-center gap-2 rounded-lg border border-[var(--line)] px-3 text-sm shadow-[0_1px_2px_rgb(0_0_0/0.04)] transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900"
+                >
+                  <Icon size={16} />
+                  {name}
+                </a>
+              </li>
+            ),
+          )}
         </ul>
       </Section>
     </div>

@@ -21,27 +21,20 @@ export const metadata: Metadata = {
     canonical: "/resume",
   },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "article",
     url: `https://everydaycodings.com/resume`,
     title: "Kumar Saksham’s Resume",
     siteName: "Kumar Saksham's Portfolio",
     description:
       "Detailed resume of Kumar Saksham, AI-focused Backend Engineer, with work experience, projects, and educational background.",
-    images: [
-      {
-        url: `https://cdn.everydaycodings.com/open-graph/business-card.png`,
-        width: 1200,
-        height: 630,
-        alt: "Kumar Saksham's Resume",
-      },
-    ],
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Kumar Saksham's Resume",
     description:
       "Check out Kumar Saksham’s resume, showcasing AI-focused backend, finance, folklore archive, and freelance engineering work.",
-    images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
     creator: "@everydaycodings",
     creatorId: "@everydaycodings",
     site: "@everydaycodings",

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Kumar Saksham",
   },
   description:
-    "Passionate Backend Developer from India. On the way to master programming",
+    "AI-focused Backend Engineer from India, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
   keywords: [
     "Kumar Saksham",
     "Backend Developer",
@@ -30,25 +30,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Kumar Saksham", url: "https://everydaycodings.com" }],
   creator: "Kumar Saksham",
   publisher: "Kumar Saksham",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Kumar Saksham",
     description:
-      "Passionate Backend Developer from India. On the way to master programming.",
+      "AI-focused Backend Engineer from India, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
     url: "https://everydaycodings.com",
     siteName: "Kumar Saksham's Portfolio",
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/ogs/ogs-bg.png",
-        width: 1200,
-        height: 630,
-        alt: "Kumar Saksham Backend Developer",
-      },
-    ],
   },
   robots: {
     index: true,
@@ -69,70 +58,28 @@ export const metadata: Metadata = {
     site: "@everydaycodings",
     siteId: "@everydaycodings",
     description:
-      "Passionate Backend Developer from India. On the way to master programming.",
-    images: ["/ogs/ogs-bg.png"],
+      "AI-focused Backend Engineer from India, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
   },
   icons: {
     icon: [
-      {
-        media: "(prefers-color-scheme: light)",
-        url: "/favicon/favicon.png",
-        href: "/favicon/favicon.png",
-        sizes: "96x96",
-        type: "image/png",
-        rel: "icon",
-      },
-      {
-        media: "(prefers-color-scheme: light)",
-        url: "/favicon/favicon.png",
-        type: "image/png",
-        rel: "icon",
-      },
-      {
-        media: "(prefers-color-scheme: dark)",
-        url: "/favicon/favicon-dark.png",
-        href: "/favicon/favicon-dark.png",
-        sizes: "96x96",
-        type: "image/png",
-        rel: "icon",
-      },
-      {
-        media: "(prefers-color-scheme: dark)",
-        url: "/favicon/favicon.png",
-        type: "image/png",
-        rel: "icon",
-      },
+      { url: "/favicon/favicon.ico", sizes: "48x48" },
+      { url: "/favicon/favicon.png", sizes: "96x96", type: "image/png" },
     ],
-    shortcut: [
-      {
-        media: "(prefers-color-scheme: light)",
-        url: "/favicon/favicon.png",
-        href: "/favicon/favicon.png",
-      },
-      {
-        media: "(prefers-color-scheme: dark)",
-        url: "/favicon/favicon.png",
-        href: "/favicon/favicon.png",
-      },
-    ],
-    apple: [
-      {
-        media: "(prefers-color-scheme: light)",
-        url: "/favicon/favicon.png",
-        href: "/favicon/favicon.png",
-        sizes: "180x180",
-        type: "image/png",
-      },
-      {
-        media: "(prefers-color-scheme: dark)",
-        url: "/favicon/favicon.png",
-        href: "/favicon/favicon.png",
-        sizes: "180x180",
-        type: "image/png",
-      },
-    ],
+    apple: { url: "/favicon/apple-touch-icon.png", sizes: "180x180" },
   },
 };
+
+// Runs in <head> before paint so there is no flash of the wrong theme.
+const themeScript = `(() => {
+  const m = matchMedia("(prefers-color-scheme: dark)");
+  const apply = () => {
+    let t; try { t = localStorage.theme; } catch {}
+    document.documentElement.classList.toggle("dark", t === "dark" || (t !== "light" && m.matches));
+  };
+  apply();
+  m.addEventListener("change", apply);
+  window.__applyTheme = apply;
+})()`;
 
 const cx = (...classes) => classes.filter(Boolean).join(" ");
 
@@ -144,13 +91,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
-        "text-black bg-white dark:text-white dark:bg-[#111010]",
-        GeistSans.variable,
-        GeistMono.variable,
-      )}
+      className={cx(GeistSans.variable, GeistMono.variable)}
+      suppressHydrationWarning
     >
-      <body className="antialiased">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="antialiased text-black bg-white dark:text-white dark:bg-[#111010]">
         <div className="mx-auto flex min-h-dvh max-w-3xl flex-col border-x border-[var(--line)]">
           <Cmdk />
           <Navbar />

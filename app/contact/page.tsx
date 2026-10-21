@@ -19,26 +19,19 @@ export const metadata: Metadata = {
     canonical: "/contact",
   },
   openGraph: {
+    images: ["/opengraph-image"],
     title: "Contact Kumar Saksham",
     description:
       "Find and connect with Kumar Saksham via email or book a meeting.",
     url: "https://everydaycodings.com/contact",
     siteName: "Kumar Saksham's Portfolio",
-    images: [
-      {
-        url: "https://cdn.everydaycodings.com/open-graph/business-card.png",
-        width: 1200,
-        height: 630,
-        alt: "Contact Kumar Saksham",
-      },
-    ],
     type: "website",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Contact Kumar Saksham",
     description: "Connect with Kumar Saksham via email or schedule a meet.",
-    images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
     creator: "@everydaycodings",
     creatorId: "@everydaycodings",
     site: "@everydaycodings",

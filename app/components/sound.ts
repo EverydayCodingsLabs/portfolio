@@ -1,7 +1,7 @@
 // UI sounds synthesized with Web Audio, so there are no audio files to load.
 let ctx: AudioContext | undefined;
 
-export function play(kind: "click" | "glitch") {
+export function play(kind: "click" | "glitch" | "light" | "dark") {
   try {
     ctx ??= new AudioContext();
     const t = ctx.currentTime;
@@ -18,6 +18,33 @@ export function play(kind: "click" | "glitch") {
       osc.connect(gain);
       osc.start(t);
       osc.stop(t + 0.06);
+      return;
+    }
+
+    if (kind === "light" || kind === "dark") {
+      // Switch: a short noise snap, then a tone that rises into light or falls into dark.
+      const snap = ctx.createBufferSource();
+      snap.buffer = ctx.createBuffer(1, ctx.sampleRate * 0.02, ctx.sampleRate);
+      const noise = snap.buffer.getChannelData(0);
+      for (let i = 0; i < noise.length; i++) {
+        noise[i] = (Math.random() * 2 - 1) * (1 - i / noise.length) ** 3;
+      }
+      const snapGain = ctx.createGain();
+      snapGain.gain.value = 0.35;
+      snap.connect(snapGain).connect(ctx.destination);
+      snap.start(t);
+
+      const [from, to] = kind === "light" ? [440, 880] : [660, 220];
+      const osc = ctx.createOscillator();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(from, t + 0.01);
+      osc.frequency.exponentialRampToValueAtTime(to, t + 0.22);
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.exponentialRampToValueAtTime(0.18, t + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.3);
+      osc.connect(gain);
+      osc.start(t);
+      osc.stop(t + 0.32);
       return;
     }
 

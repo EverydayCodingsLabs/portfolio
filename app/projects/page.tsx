@@ -20,27 +20,20 @@ export const metadata: Metadata = {
     canonical: "/projects",
   },
   openGraph: {
+    images: ["/opengraph-image"],
     title: "Kumar Saksham's Projects",
     description:
       "Discover the latest projects built by Kumar Saksham, including AI and open-source contributions.",
     url: "https://everydaycodings.com/projects",
     siteName: "Kumar Saksham's Portfolio",
-    images: [
-      {
-        url: "https://cdn.everydaycodings.com/open-graph/business-card.png",
-        width: 1200,
-        height: 630,
-        alt: "Kumar Saksham's Projects",
-      },
-    ],
     type: "website",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Kumar Saksham's Projects",
     description:
       "Explore a variety of projects and open-source contributions by Kumar Saksham.",
-    images: ["https://cdn.everydaycodings.com/open-graph/business-card.png"],
     creator: "@everydaycodings",
     creatorId: "@everydaycodings",
     site: "@everydaycodings",

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { config } from "../config/config";
 import ISTClock from "./ist-clock";
 import { play } from "./sound";
+import { ThemeToggle } from "./theme-toggle";
 
 // react-cmdk only listens for the shortcut, so the button sends it.
 function openPalette() {
@@ -48,6 +49,7 @@ export function Navbar() {
           <MagnifyingGlass size={15} weight="bold" />
           <kbd className="hidden font-sans text-xs sm:inline">⌘K</kbd>
         </button>
+        <ThemeToggle />
         <div className="hidden md:block">
           <ISTClock />
         </div>

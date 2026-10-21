@@ -11,15 +11,13 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #111010;
-    --line: #262524;
-    --hatch: #262524;
-    --dot: #3a3938;
-    --scan: rgb(255 255 255 / 0.12);
-    color-scheme: dark;
-  }
+:root.dark {
+  --bg: #111010;
+  --line: #262524;
+  --hatch: #262524;
+  --dot: #3a3938;
+  --scan: rgb(255 255 255 / 0.12);
+  color-scheme: dark;
 }
 
 ::selection {
@@ -253,6 +251,13 @@ html {
     opacity: 0;
     transform: scale(0.96);
   }
+}
+
+/* Theme switch: the new theme grows as a circle out of the toggle (set in theme-toggle.tsx). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 @media (prefers-reduced-motion: reduce) {
