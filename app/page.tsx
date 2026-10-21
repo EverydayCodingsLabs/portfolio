@@ -76,9 +76,9 @@ function Company({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex translate-y-[3px] items-center gap-1 rounded-md border border-[var(--line)] bg-neutral-50 px-1.5 py-0.5 align-baseline text-sm leading-4 text-neutral-900 transition-colors hover:border-neutral-300 dark:bg-neutral-900 dark:text-neutral-100 dark:hover:border-neutral-700"
+      className="inline-flex translate-y-[3px] items-center gap-1 rounded-md border border-[var(--line)] bg-neutral-50 px-1.5 py-0.5 align-baseline text-base font-medium leading-5 text-neutral-900 transition-colors hover:border-neutral-300 dark:bg-neutral-900 dark:text-neutral-100 dark:hover:border-neutral-700"
     >
-      <Image src={logo} alt="" width={14} height={14} aria-hidden="true" />
+      <Image src={logo} alt="" width={16} height={16} aria-hidden="true" />
       {name}
     </a>
   );
