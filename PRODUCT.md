@@ -29,7 +29,7 @@ Unusual domain range: the same engineering rigor applied to very different world
 
 - All profile, product, social and resume content lives in `app/config/config.ts` and `app/config/resume.ts`. Pages and the OG card read from there.
 - Shows "Available for opportunities" when `config.profile.availableForFreelance` is set.
-- MonkCapital apps are read-only: they never place orders or move money. Copy must not imply otherwise.
+- MonkCapital apps never place orders or move money. Copy must not imply otherwise, but don't call them "read-only" in site copy (owner's request).
 - Resume `languages` is marked as assumed in the source and is unconfirmed.
 
 ## Brand Commitments

@@ -7,9 +7,15 @@ export const resumeData = {
     "Backend engineer building AI-powered products end to end, from data pipelines and APIs to the interfaces on top. Founder of MonkCapital, a wealth analytics and IPO tracking platform with real return metrics like XIRR and CAGR, and builder of LokKatha, a sourced archive of Indian folklore. Self-taught and quick to pick up new technologies.",
   skills: [
     { group: "Languages", items: "Python, TypeScript, SQL" },
-    { group: "Backend", items: "Django, FastAPI, REST APIs, data pipelines" },
+    {
+      group: "Backend",
+      items: "Node.js, Django, FastAPI, REST APIs, BullMQ, data pipelines",
+    },
     { group: "Frontend", items: "Next.js, React, Tailwind CSS" },
-    { group: "Data & Infra", items: "PostgreSQL, Supabase, Docker, AWS S3" },
+    {
+      group: "Data & Infra",
+      items: "PostgreSQL, Supabase, Redis, Docker, AWS S3",
+    },
     {
       group: "Domains",
       items: "Portfolio analytics, applied cryptography, generative AI",
@@ -28,14 +34,14 @@ export const resumeData = {
     {
       name: "Nimbus",
       url: "https://github.com/everydaycodings/Nimbus",
-      stack: "Next.js, Supabase, AWS S3",
+      stack: "Next.js, Supabase, AWS S3, Web Crypto",
       summary:
-        "Self-hosted file manager with client-side encrypted vaults, version history, and protected share links that expire.",
+        "Cloud storage dashboard with zero-knowledge AES-256 vaults, an offline browser-only safe (OPFS), version history, and protected share links that expire.",
     },
     {
       name: "StableFusion",
       url: "https://github.com/NeuralRealm/StableFusion",
-      stack: "Python, Stable Diffusion",
+      stack: "Python, PyTorch, Diffusers, Streamlit",
       summary:
         "Image generation workstation with text-to-image, inpainting, ControlNet pose guidance, and checkpoint-to-diffusers model conversion.",
     },
@@ -52,21 +58,21 @@ export const resumeData = {
           period: "Sep 2025 - Present",
           workType: "Self-employed",
           technologies: [
-            "Python",
-            "Django",
-            "FastAPI",
             "Next.js",
             "TypeScript",
+            "Supabase",
             "PostgreSQL",
+            "Redis",
+            "BullMQ",
+            "AWS S3",
             "Docker",
-            "Cloud Deployment",
           ],
           responsibilities: [
-            "Building an AI-powered wealth management platform focused on portfolio analytics and long-term investing",
-            "Designed backend architecture for handling financial data, user portfolios, and analytics",
-            "Implemented portfolio performance metrics, asset allocation tracking, and cash-flow analysis",
-            "Developing scalable APIs and data pipelines for financial and market data ingestion",
-            "Laying the groundwork for AI-driven insights such as risk profiling and intelligent portfolio analysis",
+            "Building a wealth analytics platform and an IPO tracker for every Indian mainboard and SME issue",
+            "Designed a ledger-first data model: holdings, balances and performance are derived from transactions, and money is never stored as a float",
+            "Implemented return metrics including XIRR, CAGR and Sharpe, plus asset allocation and cash-flow analysis",
+            "Built ingestion from 20+ market and economic data sources behind provider adapters, with health checks and BullMQ background workers",
+            "Added LLM-assisted IPO prospectus analysis through OpenRouter",
           ],
         },
       ],
@@ -84,16 +90,17 @@ export const resumeData = {
           technologies: [
             "Next.js",
             "TypeScript",
-            "shadcn/ui",
             "Supabase",
+            "Redis",
+            "BullMQ",
+            "Leaflet",
             "Docker",
-            "Cloud Deployment",
           ],
           responsibilities: [
             "Built a searchable folklore archive with classification by entity type, threat level, region, and language",
             "Designed structured entity pages for mythology, sightings, rituals, regional context, and historical references",
-            "Added archive discovery tools including guided browsing, random entries, long-form guides, and newsletter updates",
-            "Created a scalable content model for folklore records while preserving cultural and regional metadata",
+            "Built an interactive Leaflet atlas mapping folklore region by region",
+            "Added AI audio narration (Sarvam TTS) and LLM comment moderation, run as BullMQ background jobs",
           ],
         },
       ],
@@ -106,7 +113,7 @@ export const resumeData = {
       positions: [
         {
           role: "Freelance Backend & Data Engineer",
-          period: "2023 - Mar 2025",
+          period: "2023 - Mar 2026",
           workType: "Contract",
           technologies: [
             "Python",

@@ -27,7 +27,7 @@ export const config = {
       logo: "/logos/monkcapital.png",
       banner: "/products/monkcapital-banyan.webp",
       blurb:
-        "See all your money. Track every IPO. MonkCapital brings your net worth, investments, loans, goals and spending into one dashboard, measured with real return metrics like XIRR, CAGR and Sharpe against inflation. Its IPO tracker follows every Indian mainboard and SME issue from bid dates and subscription to grey-market premium and listing gains. Both apps are read-only: they never place an order or move your money.",
+        "See all your money. Track every IPO. MonkCapital brings your net worth, investments, loans, goals and spending into one dashboard and tells you how they are really doing, with XIRR, CAGR and Sharpe measured against inflation. Its IPO tracker follows every Indian mainboard and SME issue live, from bid dates and subscription to grey-market premium and listing-day gains.",
       apps: [
         {
           name: "Wealth Management",
@@ -49,7 +49,7 @@ export const config = {
       logo: "/logos/lokkatha.png",
       banner: "/products/lokkatha-header.webp",
       blurb:
-        "A field guide to the spirits, guardians and divine forces of the Indian subcontinent, documented from primary sources across three millennia. Every entity is classified by type, region, language and threat level, with its sightings, rituals and history, and the atlas maps the supernatural geography region by region.",
+        "Meet the spirits, guardians and divine forces of the Indian subcontinent, traced through three millennia of primary sources. Every entity is classified by type, region, language and threat level, with its sightings, rituals and history, often narrated aloud, and the atlas maps India's supernatural geography region by region.",
       apps: [
         {
           name: "Folklore Archive",
