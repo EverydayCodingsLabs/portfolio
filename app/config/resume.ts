@@ -4,7 +4,7 @@ export const resumeData = {
   title: "Backend Engineer · AI & Data Products",
   location: "Sahibganj, Jharkhand, India",
   summary:
-    "Backend engineer who builds AI-powered products end to end, from financial data pipelines and APIs to the interfaces people use. Founder of MonkCapital, a wealth analytics and IPO tracking platform, and LokKatha, a structured archive of Indian folklore. Shipping production Python and TypeScript systems since 2023.",
+    "I live where tech meets finance, building AI-powered products end to end that make everyday life, and money most of all, easy. Founder of MonkCapital, a wealth analytics and IPO tracking platform that makes understanding your finances a piece of cake. Self-taught, quick to pick up new technologies, and ready to go toe to toe with engineers around the world.",
   skills: [
     { group: "Languages", items: "Python, TypeScript, SQL" },
     { group: "Backend", items: "Django, FastAPI, REST APIs, data pipelines" },
@@ -132,10 +132,18 @@ export const resumeData = {
 
   education: [
     {
+      institution: "Indira Gandhi National Open University (IGNOU)",
+      logo: "",
+      degree: "Master of Computer Applications (MCA)",
+      period: "2026 - Present",
+      location: "New Delhi, India",
+    },
+    {
       institution: "Sahibganj College",
       logo: "",
-      degree: "Bachelor of Computer Application (BCA)",
-      period: "2022 - Present",
+      degree: "Bachelor of Computer Application (BCA), CGPA 7.5",
+      // ponytail: assumed 3-year BCA ended 2025, edit if not
+      period: "2022 - 2025",
       location: "Sahibganj, Jharkhand, India",
     },
     {

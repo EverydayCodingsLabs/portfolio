@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Kumar Saksham",
   },
   description:
-    "AI-focused Backend Engineer from India, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
+    "India-based Backend Engineer specializing in AI systems, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
   keywords: [
     "Kumar Saksham",
     "Backend Developer",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kumar Saksham",
     description:
-      "AI-focused Backend Engineer from India, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
+      "India-based Backend Engineer specializing in AI systems, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
     url: "https://everydaycodings.com",
     siteName: "Kumar Saksham's Portfolio",
     locale: "en_US",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     site: "@everydaycodings",
     siteId: "@everydaycodings",
     description:
-      "AI-focused Backend Engineer from India, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
+      "India-based Backend Engineer specializing in AI systems, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.",
   },
   icons: {
     icon: [

@@ -6,7 +6,7 @@ export const config = {
     professionalStartDate: "2024-01-01", // When you started working on production apps
     availableForFreelance: true,
     roles: [
-      "AI-focused Backend Engineer",
+      "Backend Engineer, AI Systems",
       "Founder of MonkCapital",
       "Building LokKatha",
     ],

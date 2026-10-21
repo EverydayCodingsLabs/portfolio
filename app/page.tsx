@@ -19,7 +19,7 @@ import { config } from "./config/config";
 import { resumeData } from "./config/resume";
 
 const description =
-  "AI-focused Backend Engineer from India, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.";
+  "India-based Backend Engineer specializing in AI systems, building AI-backed products for finance, cultural knowledge, and data-heavy workflows.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://everydaycodings.com"),
@@ -107,7 +107,7 @@ export default function Page() {
     alternateName: "everydaycodings",
     url: "https://everydaycodings.com",
     image: "https://everydaycodings.com/avatar.webp",
-    jobTitle: "AI-focused Backend Engineer",
+    jobTitle: "Backend Engineer, AI Systems",
     worksFor: [
       {
         "@type": "Organization",
@@ -172,32 +172,35 @@ export default function Page() {
       <Section title="About">
         <ul className="max-w-[68ch] list-disc space-y-3 pl-5 leading-relaxed text-neutral-700 marker:text-neutral-300 dark:text-neutral-300 dark:marker:text-neutral-600">
           <li>
-            I'm a backend engineer from Sahibganj, India, who builds AI-powered
-            products end to end, from data pipelines and APIs to the interface
-            people actually use.{" "}
-            {yearsSince(config.profile.codingStartDate)}+ years of writing code,{" "}
-            {yearsSince(config.profile.professionalStartDate)}+ of shipping it
-            to production.
+            I'm a backend engineer based in Sahibganj, India, focused on
+            building AI-driven products from the ground up: data pipelines,
+            APIs and the interfaces that bring them to life. I've been writing
+            code for {yearsSince(config.profile.codingStartDate)}+ years and
+            shipping production systems for{" "}
+            {yearsSince(config.profile.professionalStartDate)}+.
           </li>
           <li>
-            I founded {monk}, where I build the systems behind its wealth
-            dashboard and IPO tracker: portfolio analytics, financial data
-            pipelines and return metrics that turn messy money data into clear
-            answers.
+            As the founder of {monk}, I lead the engineering behind its wealth
+            dashboard and IPO tracker, building the portfolio analytics,
+            financial data pipelines and return metrics that turn complex
+            financial data into decisions people can act on.
           </li>
           <li>
-            I also run {lok}, a searchable archive of Indian folklore, and
-            designed the content model that keeps three millennia of regional
-            myth structured, sourced and easy to explore.
+            I also build {lok}, a searchable archive of Indian folklore. I
+            designed its content model to keep three thousand years of regional
+            mythology structured, well-sourced and genuinely enjoyable to
+            explore.
           </li>
           <li>
-            Before that, I spent two years freelancing, shipping backend
-            services, automation and data workflows for early-stage clients.
+            Before starting my own ventures, I spent 2+ years freelancing,
+            delivering backend services, automation and data workflows for
+            early-stage startups.
           </li>
           <li>
-            I move fast with AI, but every line still gets reviewed and every
-            system is designed on purpose. Code only matters when it solves a
-            real problem.
+            I use AI to move quickly, but I hold the work to a high bar: every
+            system is designed with intent and every line is reviewed. I'm most
+            interested in problems where good engineering makes a measurable
+            difference. If that sounds like yours, let's talk.
           </li>
         </ul>
       </Section>

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Kumar Saksham’s Resume",
     siteName: "Kumar Saksham's Portfolio",
     description:
-      "Detailed resume of Kumar Saksham, AI-focused Backend Engineer, with work experience, projects, and educational background.",
+      "Detailed resume of Kumar Saksham, Backend Engineer specializing in AI systems, with work experience, projects, and educational background.",
   },
   twitter: {
     images: ["/opengraph-image"],
@@ -99,6 +99,10 @@ export default function ResumePage() {
                     {href ? (
                       <a
                         href={href}
+                        {...(href.startsWith("http") && {
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        })}
                         className="underline-offset-4 hover:text-neutral-900 hover:underline dark:hover:text-neutral-100"
                       >
                         {label}
@@ -177,6 +181,8 @@ export default function ResumePage() {
                         {job.website ? (
                           <a
                             href={job.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="font-medium underline-offset-4 hover:underline"
                           >
                             {job.company}
@@ -205,6 +211,8 @@ export default function ResumePage() {
                     <p className="flex flex-wrap items-baseline justify-between gap-x-3">
                       <a
                         href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-sm font-semibold text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50"
                       >
                         {project.name}
