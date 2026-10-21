@@ -3,7 +3,6 @@ import { MagnifyingGlass } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { config } from "../config/config";
-import Chip from "./chip";
 import ISTClock from "./ist-clock";
 import { play } from "./sound";
 
@@ -52,11 +51,6 @@ export function Navbar() {
         <div className="hidden md:block">
           <ISTClock />
         </div>
-        {currentRoute === "/resume" && (
-          <Chip onClick={() => window.print()} className="whitespace-nowrap">
-            Print
-          </Chip>
-        )}
       </nav>
     </header>
   );

@@ -310,3 +310,49 @@ html {
     page-break-before: always;
   }
 }
+
+/* Resume: the /resume page prints as the one-page A4 PDF (pnpm resume:pdf) */
+@page resume {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html:has(.resume) {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  body:has(.resume) {
+    page: resume;
+    margin: 0;
+  }
+
+  body:has(.resume) > div,
+  body:has(.resume) main {
+    max-width: none;
+    min-height: 0;
+    border: 0;
+    padding: 0;
+  }
+
+  /* Wide tracking splits words in PDF text extraction, which ATS parsers read */
+  .resume-sheet h2,
+  .resume-sheet header p {
+    letter-spacing: 0.08em;
+  }
+
+  .resume-sheet {
+    display: flex;
+    flex-direction: column;
+    height: 297mm;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .resume-sheet > div {
+    flex: 1;
+    grid-template-columns: 16.5rem 1fr;
+  }
+}

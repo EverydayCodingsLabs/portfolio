@@ -1,6 +1,45 @@
 import { config } from "./config";
 
 export const resumeData = {
+  title: "Backend Engineer · AI & Data Products",
+  location: "Sahibganj, Jharkhand, India",
+  summary:
+    "Backend engineer who builds AI-powered products end to end, from financial data pipelines and APIs to the interfaces people use. Founder of MonkCapital, a wealth analytics and IPO tracking platform, and LokKatha, a structured archive of Indian folklore. Shipping production Python and TypeScript systems since 2023.",
+  skills: [
+    { group: "Languages", items: "Python, TypeScript, SQL" },
+    { group: "Backend", items: "Django, FastAPI, REST APIs, data pipelines" },
+    { group: "Frontend", items: "Next.js, React, Tailwind CSS" },
+    { group: "Data & Infra", items: "PostgreSQL, Supabase, Docker, AWS S3" },
+    {
+      group: "Domains",
+      items: "Portfolio analytics, applied cryptography, generative AI",
+    },
+  ],
+  // ponytail: assumed, edit to match
+  languages: ["English", "Hindi"],
+  projects: [
+    {
+      name: "Glyph",
+      url: "https://github.com/EverydayCodingsLabs/glyph",
+      stack: "Next.js, Supabase, S3, Docker",
+      summary:
+        "End-to-end encrypted messenger with seed-phrase identity: BIP-39 derived Ed25519 and X25519 keys, XChaCha20-Poly1305 sealed messages, and a server that only ever stores ciphertext.",
+    },
+    {
+      name: "Nimbus",
+      url: "https://github.com/everydaycodings/Nimbus",
+      stack: "Next.js, Supabase, AWS S3",
+      summary:
+        "Self-hosted file manager with client-side encrypted vaults, version history, and protected share links that expire.",
+    },
+    {
+      name: "StableFusion",
+      url: "https://github.com/NeuralRealm/StableFusion",
+      stack: "Python, Stable Diffusion",
+      summary:
+        "Image generation workstation with text-to-image, inpainting, ControlNet pose guidance, and checkpoint-to-diffusers model conversion.",
+    },
+  ],
   workExperience: [
     {
       company: "MonkCapital",
