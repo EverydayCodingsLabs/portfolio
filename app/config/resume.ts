@@ -34,9 +34,9 @@ export const resumeData = {
     {
       name: "Nimbus",
       url: "https://github.com/everydaycodings/Nimbus",
-      stack: "Next.js, Supabase, AWS S3, Web Crypto",
+      stack: "Next.js, PostgreSQL, React Native, S3, Docker",
       summary:
-        "Cloud storage dashboard with zero-knowledge AES-256 vaults, an offline browser-only safe (OPFS), version history, and protected share links that expire.",
+        "Self-hosted Google Drive alternative with browser-encrypted vaults, a native Android app, ML photo search, WebDAV and S3 APIs, a secrets manager and a container registry with image scanning.",
     },
     {
       name: "StableFusion",
